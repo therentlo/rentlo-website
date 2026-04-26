@@ -1,0 +1,5 @@
+# www → apex redirect
+https://www.therentlo.com/* https://therentlo.com/:splat 301!
+
+# SPA fallback
+/*    /index.html   200
