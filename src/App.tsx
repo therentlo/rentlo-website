@@ -43,7 +43,7 @@ export function App() {
         <BankStrip locale={L} />
         <Problems locale={L} />
         <Features locale={L} />
-        <Pricing locale={L} />
+        <Pricing />
         <HowItWorks localeCode={locale} />
         <FAQ localeCode={locale} />
         <CTA localeCode={locale} />

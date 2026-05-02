@@ -12,16 +12,6 @@ export interface Tenant {
   label: string
 }
 
-export interface PricingTier {
-  tier: string
-  amount: string
-  per: string
-  unit: string
-  bullets: string[]
-  cta: string
-  pick?: boolean
-}
-
 export interface Locale {
   code: LocaleCode
   label: string
@@ -43,7 +33,6 @@ export interface Locale {
   dashBank: string
   dashRef: string
   tenants: Tenant[]
-  pricing: PricingTier[]
 }
 
 export const BANK_NAMES: Record<string, string> = {
@@ -93,12 +82,6 @@ export const LOCALES: Record<LocaleCode, Locale> = {
       { av: 'FA', color: '#F59E0B', name: 'Farah Aziz', email: 'farah@mail.com', prop: 'Unit 14 · Bangsar', amt: 1350, due: '1 Apr', status: 'due', label: 'Due today' },
       { av: 'ML', color: '#10B981', name: 'Mei-Ling Tan', email: 'meiling@mail.com', prop: 'Unit 05C · Damansara', amt: 2200, due: '28 Mar', status: 'over', label: '5 days late' },
     ],
-    pricing: [
-      { tier: 'Starter', amount: 'Free', per: ' forever', unit: '1 tenant', bullets: ['Invoices & receipts', '3 reminders per month', 'Email support'], cta: 'Join waitlist', pick: false },
-      { tier: 'Small', amount: 'RM 39', per: ' / month', unit: 'Up to 5 tenants', bullets: ['Everything in Starter', 'Auto bank matching', 'WhatsApp reminders', 'Tax-ready exports (LHDN)'], cta: 'Notify me when this opens', pick: true },
-      { tier: 'Growing', amount: 'RM 79', per: ' / month', unit: 'Up to 15 tenants', bullets: ['Everything in Small', 'Utilities & deposits', 'Multi-property view', 'Priority chat support'], cta: 'Notify me when this opens' },
-      { tier: 'Portfolio', amount: 'RM 149', per: ' / month', unit: 'Up to 40 tenants', bullets: ['Everything in Growing', 'Co-landlord access', 'Custom branding', 'Phone support'], cta: 'Notify me when this opens' },
-    ],
   },
   KH: {
     code: 'KH',
@@ -131,12 +114,6 @@ export const LOCALES: Record<LocaleCode, Locale> = {
       { av: 'PN', color: '#F59E0B', name: 'Pisey Nov', email: 'pisey@mail.kh', prop: 'Apt 5 · Chamkarmon', amt: 400, due: '1 Apr', status: 'due', label: 'Due today' },
       { av: 'VS', color: '#10B981', name: 'Vichea Sao', email: 'vichea@mail.kh', prop: 'Apt 9 · Russian Mkt', amt: 650, due: '28 Mar', status: 'over', label: '5 days late' },
     ],
-    pricing: [
-      { tier: 'Starter', amount: 'Free', per: ' forever', unit: '1 tenant', bullets: ['Invoices & receipts', '3 reminders per month', 'Email support'], cta: 'Join waitlist', pick: false },
-      { tier: 'Small', amount: '$ 7', per: ' / month', unit: 'Up to 5 tenants', bullets: ['Everything in Starter', 'Auto bank matching', 'Telegram + WhatsApp reminders', 'Tax-ready exports (GDT)'], cta: 'Notify me when this opens', pick: true },
-      { tier: 'Growing', amount: '$ 13', per: ' / month', unit: 'Up to 15 tenants', bullets: ['Everything in Small', 'Utilities & deposits', 'Multi-property view', 'Priority chat support'], cta: 'Notify me when this opens' },
-      { tier: 'Portfolio', amount: '$ 28', per: ' / month', unit: 'Up to 40 tenants', bullets: ['Everything in Growing', 'Co-landlord access', 'Custom branding', 'Phone support'], cta: 'Notify me when this opens' },
-    ],
   },
   XX: {
     code: 'XX',
@@ -168,12 +145,6 @@ export const LOCALES: Record<LocaleCode, Locale> = {
       { av: 'DO', color: '#EC4899', name: 'Daniel Ong', email: 'daniel@mail.com', prop: 'Unit 08B', amt: 480, due: '1 Apr', status: 'due', label: 'Due in 3 days' },
       { av: 'FA', color: '#F59E0B', name: 'Farah Aziz', email: 'farah@mail.com', prop: 'Unit 14', amt: 400, due: '1 Apr', status: 'due', label: 'Due today' },
       { av: 'ML', color: '#10B981', name: 'Mei-Ling Tan', email: 'meiling@mail.com', prop: 'Unit 05C', amt: 650, due: '28 Mar', status: 'over', label: '5 days late' },
-    ],
-    pricing: [
-      { tier: 'Starter', amount: 'Free', per: ' forever', unit: '1 tenant', bullets: ['Invoices & receipts', '3 reminders per month', 'Email support'], cta: 'Join waitlist', pick: false },
-      { tier: 'Small', amount: '$ 7', per: ' / month', unit: 'Up to 5 tenants', bullets: ['Everything in Starter', 'Auto bank matching', 'WhatsApp reminders', 'Tax-ready exports'], cta: 'Notify me when this opens', pick: true },
-      { tier: 'Growing', amount: '$ 13', per: ' / month', unit: 'Up to 15 tenants', bullets: ['Everything in Small', 'Utilities & deposits', 'Multi-property view', 'Priority chat support'], cta: 'Notify me when this opens' },
-      { tier: 'Portfolio', amount: '$ 28', per: ' / month', unit: 'Up to 40 tenants', bullets: ['Everything in Growing', 'Co-landlord access', 'Custom branding', 'Phone support'], cta: 'Notify me when this opens' },
     ],
   },
 }

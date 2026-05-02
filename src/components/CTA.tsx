@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { LocaleCode } from '../locales'
-import { submitWaitlist } from '../lib/submitWaitlist'
 import { useReveal } from '../hooks/useReveal'
 
 interface Props {
@@ -9,18 +8,50 @@ interface Props {
 
 export function CTA({ localeCode }: Props) {
   const ref = useReveal()
+  const loadTime = useRef(Date.now())
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (!email.trim()) return
+    const form = e.currentTarget
+    const honeypot = (form.elements.namedItem('website') as HTMLInputElement).value
+
+    if (honeypot) return // bot
+
+    if (!email.trim() && !phone.trim()) {
+      setError('Please enter your email or phone number.')
+      return
+    }
+
     setLoading(true)
+    setError('')
+
     try {
-      await submitWaitlist(email.trim(), localeCode)
-    } catch (_) {}
-    setSubmitted(true)
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          phone: phone.trim(),
+          country: localeCode,
+          honeypot,
+          loadTime: loadTime.current,
+        }),
+      })
+
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Something went wrong. Please try again.')
+    }
+
     setLoading(false)
   }
 
@@ -48,33 +79,66 @@ export function CTA({ localeCode }: Props) {
               Your next rent day,<br />handled.
             </h2>
             <p className="text-muted-2 text-[20px] tracking-[-0.005em] mx-auto mb-10 max-w-[500px]">
-              Join the waitlist and we'll reach out personally to set up your first tenant. Free forever. No card, no catch.
+              Join the pilot and we'll reach out personally to set up your first tenant. Free during the pilot. No card, no catch.
             </p>
 
             {!submitted ? (
               <form
                 onSubmit={handleSubmit}
-                className="flex gap-2 max-w-[480px] mx-auto rounded-[14px] p-[7px] sm:flex-col"
-                style={{
-                  background: 'rgba(255,255,255,.08)',
-                  border: '1px solid rgba(255,255,255,.12)',
-                }}
+                className="flex flex-col gap-2 max-w-[420px] mx-auto"
               >
+                {/* Honeypot — hidden from humans, visible to bots */}
                 <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  aria-label="Email"
-                  className="flex-1 bg-transparent border-0 outline-none text-white text-[15.5px] px-4 min-w-0 placeholder-muted sm:py-2"
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    top: '-9999px',
+                    opacity: 0,
+                    height: 0,
+                    width: 0,
+                  }}
                 />
+
+                <div
+                  className="rounded-[14px] p-[7px] flex flex-col gap-1"
+                  style={{
+                    background: 'rgba(255,255,255,.08)',
+                    border: '1px solid rgba(255,255,255,.12)',
+                  }}
+                >
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    aria-label="Email address"
+                    className="bg-transparent border-0 outline-none text-white text-[15.5px] px-4 py-2.5 placeholder-muted w-full"
+                  />
+                  <div style={{ height: '1px', background: 'rgba(255,255,255,.08)', margin: '0 4px' }} />
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="012-345 6789 (optional)"
+                    aria-label="Phone number"
+                    className="bg-transparent border-0 outline-none text-white text-[15.5px] px-4 py-2.5 placeholder-muted w-full"
+                  />
+                </div>
+
+                {error && (
+                  <p className="text-red-400 text-[13.5px] text-center -mt-1">{error}</p>
+                )}
+
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-shrink-0 inline-flex items-center gap-1.5 h-[46px] px-[18px] rounded-[9px] bg-teal text-white font-medium text-[14.5px] transition-colors hover:bg-teal-600 disabled:opacity-70 sm:w-full sm:justify-center"
+                  className="w-full flex items-center justify-center gap-1.5 h-[50px] px-[18px] rounded-[12px] bg-teal text-white font-semibold text-[15px] tracking-[-0.01em] transition-all hover:bg-teal-600 hover:-translate-y-[1px] hover:shadow-lg disabled:opacity-70"
                 >
-                  {loading ? 'Joining…' : 'Join waitlist'}
+                  {loading ? 'Joining…' : 'Join the pilot'}
                   {!loading && (
                     <svg className="w-[15px] h-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M13 6l6 6-6 6" />

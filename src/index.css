@@ -88,9 +88,6 @@
 
 /* ===== Responsive overrides ===== */
 @media (max-width: 960px) {
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
   .metrics-grid,
   .how-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -109,9 +106,6 @@
 }
 
 @media (max-width: 640px) {
-  .pricing-grid {
-    grid-template-columns: 1fr !important;
-  }
   .how-grid {
     grid-template-columns: 1fr !important;
   }

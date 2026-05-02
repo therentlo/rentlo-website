@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { LocaleCode } from '../locales'
 import { CountrySwitcher } from './CountrySwitcher'
+import rentloLogoNav from '../assets/rentlo-logo-nav.png'
 
 interface Props {
   locale: LocaleCode
@@ -47,9 +48,8 @@ export function Nav({ locale, onLocaleChange }: Props) {
       >
         <div className="max-w-[1320px] mx-auto px-6 flex items-center justify-between h-16 gap-5">
           {/* Brand */}
-          <a href="#" className="flex items-center gap-2.5 font-semibold text-[19px] tracking-[-0.02em] text-navy">
-            <Logo />
-            <span>Rentlo</span>
+          <a href="#" className="flex items-center">
+            <img src={rentloLogoNav} alt="Rentlo" height={28} style={{ height: 28, width: 'auto' }} />
           </a>
 
           {/* Desktop nav links */}
@@ -90,9 +90,8 @@ export function Nav({ locale, onLocaleChange }: Props) {
         <div className="fixed inset-0 z-[100] bg-white flex flex-col" style={{ overflowY: 'auto' }}>
           {/* Top row */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-line flex-shrink-0">
-            <a href="#" onClick={closeMenu} className="flex items-center gap-2.5 font-semibold text-[19px] tracking-[-0.02em] text-navy">
-              <Logo />
-              <span>Rentlo</span>
+            <a href="#" onClick={closeMenu} className="flex items-center">
+              <img src={rentloLogoNav} alt="Rentlo" height={24} style={{ height: 24, width: 'auto' }} />
             </a>
             <button onClick={closeMenu} aria-label="Close menu" className="w-10 h-10 flex items-center justify-center text-navy">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
@@ -135,11 +134,3 @@ export function Nav({ locale, onLocaleChange }: Props) {
   )
 }
 
-function Logo() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      <rect width="64" height="64" rx="14" fill="#0D9488" />
-      <text x="32" y="44" textAnchor="middle" fontFamily="Poppins,system-ui,sans-serif" fontSize="40" fontWeight="700" fill="white">R</text>
-    </svg>
-  )
-}

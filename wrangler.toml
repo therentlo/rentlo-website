@@ -1,0 +1,11 @@
+name = "rentlo-marketing"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "cfb664e100d64db5a4d3c4cdb2618810"
+preview_id = "YOUR_KV_PREVIEW_NAMESPACE_ID"
+
+# Secrets are NOT stored here — add them via:
+#   wrangler pages secret put RESEND_API_KEY

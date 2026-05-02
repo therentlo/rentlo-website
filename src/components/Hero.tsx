@@ -1,6 +1,7 @@
 import type { Locale } from '../locales'
 import { Flag } from './Flags'
 import { useReveal } from '../hooks/useReveal'
+import rentloLogoIcon from '../assets/rentlo-logo-icon.png'
 
 interface Props {
   locale: Locale
@@ -135,10 +136,7 @@ function DashStage({ locale }: { locale: Locale }) {
         {/* Sidebar — hidden on small screens */}
         <div className="hidden lg:flex flex-col gap-0.5 border-r border-line bg-canvas p-[20px_14px]">
           <div className="flex items-center gap-2 font-semibold text-navy mx-2 mb-5 text-[15px] tracking-[-0.01em]">
-            <svg width="22" height="22" viewBox="0 0 64 64">
-              <rect width="64" height="64" rx="14" fill="#0D9488" />
-              <text x="32" y="44" textAnchor="middle" fontFamily="Poppins,system-ui,sans-serif" fontSize="40" fontWeight="700" fill="white">R</text>
-            </svg>
+            <img src={rentloLogoIcon} alt="" aria-hidden="true" width={22} height={22} className="flex-shrink-0" />
             Rentlo
           </div>
 

@@ -6,12 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://therentlo.com/privacy</loc>
+    <loc>https://therentlo.com/legal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://therentlo.com/legal/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://therentlo.com/legal/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://therentlo.com/legal/cookies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://therentlo.com/terms</loc>
+    <loc>https://therentlo.com/legal/dpa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://therentlo.com/legal/tenant-notice</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

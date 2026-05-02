@@ -1,4 +1,5 @@
 import { Flag } from './Flags'
+import rentloLogoNav from '../assets/rentlo-logo-nav.png'
 
 export function Footer() {
   return (
@@ -7,12 +8,8 @@ export function Footer() {
         <div className="foot-grid gap-14 mb-14" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr' }}>
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 font-semibold text-[19px] tracking-[-0.02em] text-navy">
-              <svg width="28" height="28" viewBox="0 0 64 64">
-                <rect width="64" height="64" rx="14" fill="#0D9488" />
-                <text x="32" y="44" textAnchor="middle" fontFamily="Poppins,system-ui,sans-serif" fontSize="40" fontWeight="700" fill="white">R</text>
-              </svg>
-              Rentlo
+            <div>
+              <img src={rentloLogoNav} alt="Rentlo" height={24} style={{ height: 24, width: 'auto' }} />
             </div>
             <p className="text-muted text-[15px] mt-5 mb-0 max-w-[300px] leading-[1.55]">
               The quiet property manager for independent landlords across Southeast Asia.
@@ -47,8 +44,9 @@ export function Footer() {
           {/* Company */}
           <FootCol title="Company">
             <FootLink href="mailto:hello@therentlo.com">Email us</FootLink>
-            <FootLink href="/privacy">Privacy</FootLink>
-            <FootLink href="/terms">Terms</FootLink>
+            <FootLink href="/legal">Legal hub</FootLink>
+            <FootLink href="/legal/privacy">Privacy</FootLink>
+            <FootLink href="/legal/terms">Terms</FootLink>
           </FootCol>
         </div>
 
