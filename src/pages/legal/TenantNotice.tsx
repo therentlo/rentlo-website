@@ -118,7 +118,6 @@ export function LegalTenantNotice() {
         items={[
           'Phone number',
           'Email address',
-          'Permanent address (separate from the rental property)',
           'Emergency contact details',
         ]}
       />
@@ -128,30 +127,27 @@ export function LegalTenantNotice() {
           'Lease start and end dates',
           'Monthly rent and payment terms',
           'Security deposit amount',
-          'Move-in condition report',
         ]}
       />
       <H3>Your payment information</H3>
       <Ul
         items={[
-          'Bank account details (only if auto-debit is set up)',
           "Payment history (what you've paid, when)",
+          'Payment receipts you send over WhatsApp (amount, date, bank, reference number)',
           'Outstanding balances',
         ]}
       />
       <H3>Communications</H3>
       <Ul
         items={[
-          'Messages about the tenancy',
-          'Maintenance requests you submit',
-          'Reminders sent to you (rent due, receipts, etc.)',
+          'Invoices and reminders sent to you',
+          'Your WhatsApp replies and receipt photos sent to Rentlo\'s WhatsApp number',
         ]}
       />
       <H3>Documents</H3>
       <Ul
         items={[
-          'Your tenancy agreement',
-          'Supporting documents you provide (employer letter, proof of income, etc.)',
+          'Your signed tenancy agreement',
         ]}
       />
 
@@ -165,7 +161,6 @@ export function LegalTenantNotice() {
           'Send you rent invoices and receipts',
           'Send payment reminders',
           'Track payments and manage any arrears',
-          'Communicate about maintenance and property issues',
           'Keep records required by law (tax records, LHDN reporting)',
           'Resolve disputes if they arise',
         ]}
@@ -192,8 +187,8 @@ export function LegalTenantNotice() {
       <Para>Rentlo stores your data and uses it to:</Para>
       <Ul
         items={[
-          'Generate invoices and contracts',
-          'Send automated reminders to you (email, and in future, WhatsApp)',
+          'Generate invoices and keep a record of your contract',
+          'Send automated messages to you (email and WhatsApp)',
           'Provide your landlord with dashboards and reports',
         ]}
       />
@@ -206,10 +201,11 @@ export function LegalTenantNotice() {
       <LegalTable
         headers={['Company', 'What they do', 'Location']}
         rows={[
-          ['Supabase', 'Stores data securely', 'Singapore'],
-          ['Cloudflare', 'Protects the platform', 'Global'],
+          ['Supabase', 'Stores data and files securely', 'Singapore'],
+          ['Cloudflare', 'Hosts and protects the platform', 'Global'],
           ['Resend', 'Sends emails', 'United States'],
-          ['Google', 'Reads uploaded documents (OCR)', 'United States'],
+          ['Google (Gemini)', 'Reads your tenancy agreement and any payment receipt photo you send (OCR)', 'United States'],
+          ['Meta (WhatsApp)', 'Delivers WhatsApp messages to you and receives your replies and receipt photos', 'Global'],
         ]}
       />
       <Para>
@@ -348,19 +344,18 @@ export function LegalTenantNotice() {
       <Ul
         items={[
           'Rent invoices',
-          'Payment reminders (before the due date)',
+          'Payment reminders',
           'Late payment notices',
-          'Payment receipts',
-          'Tenancy renewal notifications',
+          'Payment confirmations (WhatsApp)',
         ]}
       />
       <Para>
-        These come via email (and possibly WhatsApp in the future). All messages will identify
+        These come via email and WhatsApp. All messages will identify
         your landlord as the sender.
       </Para>
       <Para>
-        You can opt out of non-essential messages, but you'll still receive critical notices like
-        invoices, late payment notices, and legal notifications.
+        You can ask your landlord to stop non-essential messages, but you may still receive critical
+        notices like invoices, late payment notices, and legal notifications.
       </Para>
 
       {/* What If You Don't Agree */}

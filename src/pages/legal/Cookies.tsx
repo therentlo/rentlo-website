@@ -17,12 +17,11 @@ export function LegalCookies() {
     <LegalLayout
       title="Cookie Notice"
       effectiveDate="1 April 2026"
-      lastUpdated="1 April 2026"
+      lastUpdated="10 October 2026"
     >
       <Callout>
-        We use cookies to keep you logged in, protect your account, and understand how people use
-        Rentlo so we can improve it. We don't use cookies for advertising. You can control most of
-        them through your browser settings.
+        We use browser storage to keep you signed in and protect your account. We don't use
+        analytics or advertising cookies. You can control most of it through your browser settings.
       </Callout>
 
       {/* 1 */}
@@ -51,7 +50,6 @@ export function LegalCookies() {
         items={[
           <><strong>Local storage</strong> — data stored in your browser that persists until you clear it</>,
           <><strong>Session storage</strong> — data that disappears when you close the browser tab</>,
-          <><strong>Pixels and beacons</strong> — tiny images that help us track usage</>,
         ]}
       />
       <Para>
@@ -67,9 +65,9 @@ export function LegalCookies() {
       <LegalTable
         headers={['Cookie', 'What it does', 'How long it lasts']}
         rows={[
-          [<InlineCode key="1">sb-*-auth-token</InlineCode>, 'Keeps you logged in (Supabase auth)', 'Session to 1 year'],
-          [<InlineCode key="2">__cf_bm</InlineCode>, 'Cloudflare bot protection', '30 minutes'],
-          [<InlineCode key="3">cf_clearance</InlineCode>, 'Cloudflare security verification', 'Up to 1 year'],
+          [<InlineCode key="1">sb-*-auth-token</InlineCode>, 'Keeps you signed in (Supabase). Kept in your browser\'s local storage, not sent as a cookie', 'Until you sign out'],
+          [<InlineCode key="2">__cf_bm</InlineCode>, 'Cloudflare bot protection (only if Cloudflare sets it)', '30 minutes'],
+          [<InlineCode key="3">cf_clearance</InlineCode>, 'Cloudflare security verification (only if Cloudflare sets it)', 'Up to 1 year'],
         ]}
       />
       <H3>Functional cookies (make things nicer)</H3>
@@ -77,27 +75,16 @@ export function LegalCookies() {
         These remember your preferences so the experience feels smoother.
       </Para>
       <Para>
-        <strong>Examples:</strong> language settings, dark/light mode, remembered email for faster
-        login.
+        <strong>Examples:</strong> your country choice on the website, and a counter that limits
+        wrong one-time-code attempts in the app.
       </Para>
       <Para>
         <strong>Can you turn them off?</strong> Yes, but some convenience features won't work.
       </Para>
-      <H3>Analytics cookies (help us improve)</H3>
+      <H3>Analytics cookies</H3>
       <Para>
-        These show us how people use Rentlo — which pages get visited, which features get used,
-        where things break.
-      </Para>
-      <Para>
-        <strong>What we collect:</strong> Anonymised page views, feature usage counts, performance
-        metrics (load times, errors).
-      </Para>
-      <Para>
-        <strong>What we don't do:</strong> We don't track you across other websites. We don't build
-        an advertising profile.
-      </Para>
-      <Para>
-        <strong>Can you turn them off?</strong> Yes — see Section 5.
+        We do not use analytics cookies or tracking tools on therentlo.com or in the Rentlo app.
+        We don't track you across other websites and we don't build an advertising profile.
       </Para>
 
       {/* 4 */}
@@ -110,7 +97,7 @@ export function LegalCookies() {
           [
             'Cloudflare',
             'Site security and content delivery',
-            'Bot protection, security challenge cookies',
+            'Bot protection, security challenge cookies (if triggered)',
           ],
         ]}
       />
@@ -154,7 +141,6 @@ export function LegalCookies() {
             </>,
           ],
           ['Functional', "Some preferences won't be remembered"],
-          ['Analytics', 'No impact on your experience'],
         ]}
       />
       <H3>On mobile</H3>

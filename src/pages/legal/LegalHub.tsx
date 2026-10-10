@@ -48,7 +48,7 @@ function DocCard({ to, title, desc }: { to: string; title: string; desc: string 
 
 export function LegalHub() {
   return (
-    <LegalLayout title="Legal" lastUpdated="1 April 2026" isHub>
+    <LegalLayout title="Legal" lastUpdated="10 October 2026" isHub>
       <p className="text-[17px] text-muted leading-[1.65] mb-10">
         Everything you need to know about how Rentlo handles your data, your rights, and how our
         service works — written in plain language.
@@ -92,7 +92,7 @@ export function LegalHub() {
           [
             'Can you delete your data?',
             <>
-              <strong>Yes</strong> — email us or use the app
+              <strong>Yes</strong> — email us. Properties you move to the bin in the app are deleted after 90 days
             </>,
           ],
           [

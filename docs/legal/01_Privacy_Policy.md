@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 1 April 2026
+**Last Updated:** 10 October 2026
 
 ---
 
@@ -31,11 +31,11 @@ We collect different things depending on who you are.
 
 When you sign up and use Rentlo, we collect:
 
-- **Your identity** — full name, NRIC or passport number
+- **Your identity** — full name, NRIC or passport number, and an image of your ID card if you upload it to verify yourself
 - **Your contact details** — email address, phone number
-- **Your payment info** — billing details, bank account (for receiving rent)
+- **Your payment info** — bank account details and payout QR image (for receiving rent)
 - **Your property info** — addresses, rental amounts, lease terms
-- **Your activity** — which features you use, when you log in, what you click
+- **Your activity** — actions you take in the app (such as sending an invoice), kept in an activity log
 
 ### If you're a tenant (managed by a landlord using Rentlo)
 
@@ -45,7 +45,8 @@ Your landlord uploads your data to Rentlo. This typically includes:
 - **Your contact details** — phone number, email
 - **Your tenancy details** — lease dates, rent amount, deposit paid
 - **Your payment history** — what you've paid, what's outstanding
-- **Your documents** — tenancy agreements, supporting documents your landlord uploaded
+- **Your documents** — the signed tenancy agreement your landlord uploaded
+- **Your WhatsApp messages** — if you reply to Rentlo's WhatsApp number, your phone number, your message and any payment receipt image you send
 
 > **Important:** Your landlord decides what data to upload about you. They are responsible for getting your consent before they do. If you have questions about your data, start with your landlord — they are the one who controls it.
 
@@ -53,9 +54,9 @@ Your landlord uploads your data to Rentlo. This typically includes:
 
 When you visit therentlo.com, we automatically pick up:
 
-- Your IP address and rough location
+- Your IP address
 - Your device type and browser
-- Which pages you visit and how long you stay
+- If you join the waitlist: the email or phone number you enter and your country
 - Cookies (see our [Cookie Notice](/legal/cookies) for details)
 
 ---
@@ -67,11 +68,12 @@ Here's exactly what we do with your data — and nothing else:
 | What we do | Why |
 |---|---|
 | Run your account | You can't use Rentlo without an account |
-| Process your subscription | We need to bill you and send receipts |
-| Send you service emails | Password resets, security alerts, important updates |
-| Generate invoices and contracts | This is a core feature of Rentlo |
-| Send reminders to tenants | On your behalf — rent due, payment received, etc. |
-| Improve the product | We look at usage patterns (anonymised) to fix bugs and build better features |
+| Run paid plans (when they start) | Rentlo is free during the pilot. When paid plans start, we need to bill you and send receipts |
+| Send you service emails | Sign-in codes, security alerts, notices when an invoice could not be sent |
+| Generate invoices and keep contract records | This is a core feature of Rentlo |
+| Send messages to tenants | On your behalf — invoices, overdue reminders, payment confirmations (email and WhatsApp) |
+| Read your documents and tenant receipts | We use Google Gemini to read ID cards, tenancy agreements, payout QR images and payment receipt photos (see Section 5) |
+| Improve the product | We look at anonymised counts from our own database to fix bugs and build better features. We do not use tracking tools on the site or app |
 | Stay legal | Tax records, LHDN reporting, responding to court orders |
 | Keep things secure | Fraud detection, blocking unauthorised access |
 
@@ -103,19 +105,16 @@ We don't share your data widely. Here's the full list of who may see it:
 
 These companies help us run Rentlo. They process data on our behalf, under strict agreements:
 
-| Provider | What they do | Where they're based |
+| Provider | What they do and what they receive | Where they're based |
 |---|---|---|
-| Supabase | Stores your data, handles login | Singapore |
-| Cloudflare | Protects the site, delivers pages fast | Global |
-| Resend | Sends emails (invoices, alerts) | United States |
-| Google (Gemini API) | Reads documents you upload via OCR | United States |
+| Supabase | Database, login and file storage. Holds your data and the files you upload (ID card image, payout QR, signed contracts, tenant receipt images) | Singapore |
+| Cloudflare | Hosts therentlo.com and app.therentlo.com and delivers pages | Global |
+| Resend | Sends invoice and overdue-reminder emails to tenants, and alert emails to landlords and to us | United States |
+| Google (Gemini API) | Reads images and PDFs that you or your tenants send: your ID card image, a tenancy agreement PDF, your payout QR image, and payment receipt photos that tenants send over WhatsApp | United States |
+| Google (Places API) | Suggests addresses. Receives the address text a landlord types when adding a property | United States |
+| Meta (WhatsApp Business) | Sends invoices, reminders and payment confirmations to tenants, and alerts to landlords. Receives tenants' replies and receipt images | Global |
 
-**Coming soon** (we'll update this list when they go live):
-
-| Provider | What they do | Where they're based |
-|---|---|---|
-| Curlec | Collects rent via direct debit | Malaysia |
-| Meta (WhatsApp Business) | Sends tenant notifications | Global |
+**What Google Gemini reads.** From an ID card or passport: name, ID number, date of birth, gender, address and nationality. From a tenancy agreement: the tenant's name, ID number, nationality, email and phone, rent, deposits, dates and the property address. From a payout QR image: the payment code inside it. From a receipt photo: amount, date, bank and reference number. Gemini sends the result back to Rentlo.
 
 ### When the law requires it
 
@@ -155,7 +154,7 @@ We don't keep your data forever. Here's the breakdown:
 | Tenant data uploaded by you | While your account is active + 7 years after (tax/legal requirements) |
 | Payment and billing records | 7 years (required by Malaysian tax law) |
 | Support messages | 3 years from your last message |
-| Inactive accounts | 12 months after your last login — then we delete it |
+| Properties you move to the bin | 90 days in the bin, then permanently deleted |
 
 You can ask us to delete things earlier (see Section 10), but we may need to keep some records if the law says so.
 
@@ -166,8 +165,8 @@ You can ask us to delete things earlier (see Section 10), but we may need to kee
 We take security seriously:
 
 - **Everything is encrypted** — in transit (HTTPS) and at rest (in the database)
-- **Access is restricted** — only authorised people can see personal data
-- **We use strong authentication** — passwords must meet minimum standards
+- **Access is restricted** — each landlord can only see their own data
+- **We use one-time codes** — you sign in with a code sent to your email or phone, and changing your bank details needs another code
 - **Our providers are vetted** — we choose providers with established security track records
 - **We review regularly** — security practices are checked and updated
 
@@ -186,7 +185,7 @@ When you upload tenant data to Rentlo, **you become the Data Controller** under 
 - **Get consent first.** Before you upload a tenant's IC, phone number, or any personal details, you must tell them what you're doing and get their agreement.
 - **Give them a privacy notice.** We provide a [Tenant Privacy Notice template](/legal/tenant-notice) you can use. Fill in your details and give it to your tenants.
 - **Keep data accurate.** If a tenant's details change, update them. Don't upload data you don't need.
-- **Handle their requests.** If a tenant asks to see, correct, or delete their data — that's your job to respond. We'll help you technically (export tools, deletion features), but the obligation is yours.
+- **Handle their requests.** If a tenant asks to see, correct, or delete their data — that's your job to respond. We'll help where we can (email us), but the obligation is yours.
 - **Tell them about breaches.** If there's ever a data incident affecting their information, you need to notify them.
 
 If you skip these steps and we get a complaint or fine because of it, **you're responsible for the cost** — not us. That's in our [Terms of Service](/legal/terms) and [Data Processing Agreement](/legal/dpa) too.
@@ -240,7 +239,7 @@ We may update this policy when laws change, we add new features, or we switch pr
 - We'll email you at least **14 days** before it takes effect
 - We'll update the "Last Updated" date at the top
 - If you keep using Rentlo after the change, that counts as acceptance
-- If you disagree, you can cancel your subscription before the change kicks in
+- If you disagree, you can stop using Rentlo before the change kicks in
 
 ---
 

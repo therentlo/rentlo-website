@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 1 April 2026
+**Last Updated:** 10 October 2026
 
 ---
 
@@ -36,8 +36,8 @@ If anything in those documents conflicts with these Terms, these Terms take prio
 
 - A property management company — we don't manage your property for you
 - A real estate agent — we don't find tenants or negotiate leases
-- A law firm — our templates are tools, not legal advice
-- A bank or payment institution — we generate invoices and QR codes, but payments go directly to your bank account
+- A law firm — nothing in Rentlo is legal advice
+- A bank or payment institution — we generate invoices that show your bank details and payout QR code, but payments go directly to your bank account
 - An insurance provider — we don't guarantee tenant behaviour or rent payment
 
 > **In plain language:** We give you the tools. You make the decisions. If you need legal, financial, or property advice, consult a professional.
@@ -62,15 +62,17 @@ We can refuse service or close accounts that don't meet these requirements.
 
 **You're responsible for your account.** That means:
 
-- Keep your login credentials private
+- Keep your sign-in codes and your email and phone private
 - Everything that happens under your account is on you
 - Tell us immediately if someone accesses your account without permission (email hey@therentlo.com)
 
-We're not liable if someone gets into your account because you shared your password or didn't secure it.
+We're not liable if someone gets into your account because you shared your sign-in code or didn't secure your email or phone.
 
 ---
 
 ## 5. Plans and Pricing
+
+> **Rentlo is free during the pilot.** We do not charge or collect payments yet. This section applies once paid plans start.
 
 ### How billing works
 
@@ -140,7 +142,7 @@ Everything you upload — property details, tenant information, documents — is
 By uploading content, you give Rentlo a limited licence to:
 
 - **Store and process** it to deliver the Service
-- **Back it up** for security and disaster recovery
+- **Back it up** before we change our systems
 - **Anonymise and aggregate** it for product analytics (nothing personally identifiable leaves our systems)
 
 This licence ends when you delete the content or close your account — except where the law says we must keep records.
@@ -217,7 +219,7 @@ For changes that significantly reduce functionality you rely on, we'll tell you 
 
 ### You cancel
 
-You can cancel anytime via your account settings or by emailing hey@therentlo.com. Your access continues until the end of your current billing period.
+You can cancel anytime by emailing hey@therentlo.com. Your access continues until the end of your current billing period.
 
 ### We cancel
 
@@ -230,26 +232,26 @@ We can suspend or terminate your account immediately if you:
 
 ### What happens next
 
-- You have **30 days** to export your data after termination
+- You have **30 days** to ask us for a copy of your data after termination
 - After 30 days, we may delete everything (except what the law says we must keep)
 - The sections on intellectual property, indemnification, liability limits, and governing law survive termination
 
 ---
 
-## 13. Tenancy Agreement Templates — Disclaimer
+## 13. Tenancy Agreements — Disclaimer
 
-Rentlo provides tenancy agreement templates as a convenience feature.
+Rentlo does not write tenancy agreements. It keeps a record of the contract details you enter and stores the signed copy you upload. You use your own agreement.
 
-> **These templates are not legal advice.** They are starting points that you must review, customise, and verify for your specific situation. Rentlo does not guarantee that any template is suitable for your property, jurisdiction, or tenancy arrangement.
+> **Nothing in Rentlo is legal advice.** You must review and verify your agreement for your specific situation. Rentlo does not guarantee that any agreement is suitable for your property, jurisdiction, or tenancy arrangement.
 
 You are responsible for:
 
-- Reviewing and adapting every template before use
+- Reviewing every agreement before you sign it
 - Ensuring compliance with the Contracts Act 1950 and relevant state laws
 - **Stamping the agreement with LHDN** under the Stamp Act 1949 — unstamped agreements are not admissible as evidence in court
 - Seeking professional legal advice for complex arrangements
 
-Rentlo is not liable for any loss, dispute, or legal consequence arising from your use of our templates.
+Rentlo is not liable for any loss, dispute, or legal consequence arising from your tenancy agreement.
 
 ---
 
@@ -260,7 +262,7 @@ Rentlo is not liable for any loss, dispute, or legal consequence arising from yo
 - We don't promise it will always work perfectly
 - We don't promise it's error-free or uninterrupted
 - We don't promise the data in your account is 100% accurate (you enter it)
-- We don't promise our templates will hold up in every legal situation
+- We don't promise any agreement you use will hold up in every legal situation
 
 > **In plain language:** We build and maintain the platform with care, but no software is perfect. Use your own judgement too.
 
@@ -348,7 +350,7 @@ We may update these Terms from time to time. When we make material changes:
 - We'll email you at least **14 days** before they take effect
 - We'll update the "Last Updated" date at the top
 - Continuing to use Rentlo after the change means you accept the new Terms
-- If you disagree, cancel before the change takes effect
+- If you disagree, stop using Rentlo before the change takes effect
 
 ---
 

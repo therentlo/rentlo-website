@@ -16,7 +16,7 @@ export function LegalPrivacy() {
     <LegalLayout
       title="Privacy Policy"
       effectiveDate="1 April 2026"
-      lastUpdated="1 April 2026"
+      lastUpdated="10 October 2026"
     >
       <Callout>
         We collect your data to run Rentlo. We don't sell it. We don't use it for ads. We keep it
@@ -56,11 +56,11 @@ export function LegalPrivacy() {
       <Para>When you sign up and use Rentlo, we collect:</Para>
       <Ul
         items={[
-          <><strong>Your identity</strong> — full name, NRIC or passport number</>,
+          <><strong>Your identity</strong> — full name, NRIC or passport number, and an image of your ID card if you upload it to verify yourself</>,
           <><strong>Your contact details</strong> — email address, phone number</>,
-          <><strong>Your payment info</strong> — billing details, bank account (for receiving rent)</>,
+          <><strong>Your payment info</strong> — bank account details and payout QR image (for receiving rent)</>,
           <><strong>Your property info</strong> — addresses, rental amounts, lease terms</>,
-          <><strong>Your activity</strong> — which features you use, when you log in, what you click</>,
+          <><strong>Your activity</strong> — actions you take in the app (such as sending an invoice), kept in an activity log</>,
         ]}
       />
       <H3>If you're a tenant (managed by a landlord using Rentlo)</H3>
@@ -71,7 +71,8 @@ export function LegalPrivacy() {
           <><strong>Your contact details</strong> — phone number, email</>,
           <><strong>Your tenancy details</strong> — lease dates, rent amount, deposit paid</>,
           <><strong>Your payment history</strong> — what you've paid, what's outstanding</>,
-          <><strong>Your documents</strong> — tenancy agreements, supporting documents your landlord uploaded</>,
+          <><strong>Your documents</strong> — the signed tenancy agreement your landlord uploaded</>,
+          <><strong>Your WhatsApp messages</strong> — if you reply to Rentlo's WhatsApp number, your phone number, your message and any payment receipt image you send</>,
         ]}
       />
       <Callout>
@@ -83,9 +84,9 @@ export function LegalPrivacy() {
       <Para>When you visit therentlo.com, we automatically pick up:</Para>
       <Ul
         items={[
-          'Your IP address and rough location',
+          'Your IP address',
           'Your device type and browser',
-          'Which pages you visit and how long you stay',
+          'If you join the waitlist: the email or phone number you enter and your country',
           <>Cookies (see our <DocLink to="/legal/cookies">Cookie Notice</DocLink> for details)</>,
         ]}
       />
@@ -97,13 +98,14 @@ export function LegalPrivacy() {
         headers={['What we do', 'Why']}
         rows={[
           ['Run your account', "You can't use Rentlo without an account"],
-          ['Process your subscription', 'We need to bill you and send receipts'],
-          ['Send you service emails', 'Password resets, security alerts, important updates'],
-          ['Generate invoices and contracts', 'This is a core feature of Rentlo'],
-          ['Send reminders to tenants', 'On your behalf — rent due, payment received, etc.'],
+          ['Run paid plans (when they start)', 'Rentlo is free during the pilot. When paid plans start, we need to bill you and send receipts'],
+          ['Send you service emails', 'Sign-in codes, security alerts, notices when an invoice could not be sent'],
+          ['Generate invoices and keep contract records', 'This is a core feature of Rentlo'],
+          ['Send messages to tenants', 'On your behalf — invoices, overdue reminders, payment confirmations (email and WhatsApp)'],
+          ['Read your documents and tenant receipts', 'We use Google Gemini to read ID cards, tenancy agreements, payout QR images and payment receipt photos (see Section 5)'],
           [
             'Improve the product',
-            'We look at usage patterns (anonymised) to fix bugs and build better features',
+            'We look at anonymised counts from our own database to fix bugs and build better features. We do not use tracking tools on the site or app',
           ],
           ['Stay legal', 'Tax records, LHDN reporting, responding to court orders'],
           ['Keep things secure', 'Fraud detection, blocking unauthorised access'],
@@ -142,24 +144,35 @@ export function LegalPrivacy() {
         agreements:
       </Para>
       <LegalTable
-        headers={['Provider', 'What they do', "Where they're based"]}
+        headers={['Provider', 'What they do and what they receive', "Where they're based"]}
         rows={[
-          ['Supabase', 'Stores your data, handles login', 'Singapore'],
-          ['Cloudflare', 'Protects the site, delivers pages fast', 'Global'],
-          ['Resend', 'Sends emails (invoices, alerts)', 'United States'],
-          ['Google (Gemini API)', 'Reads documents you upload via OCR', 'United States'],
+          ['Supabase', 'Database, login and file storage. Holds your data and the files you upload (ID card image, payout QR, signed contracts, tenant receipt images)', 'Singapore'],
+          ['Cloudflare', 'Hosts therentlo.com and app.therentlo.com and delivers pages', 'Global'],
+          ['Resend', 'Sends invoice and overdue-reminder emails to tenants, and alert emails to landlords and to us', 'United States'],
+          [
+            'Google (Gemini API)',
+            "Reads images and PDFs that you or your tenants send: your ID card image, a tenancy agreement PDF, your payout QR image, and payment receipt photos that tenants send over WhatsApp",
+            'United States',
+          ],
+          [
+            'Google (Places API)',
+            'Suggests addresses. Receives the address text a landlord types when adding a property',
+            'United States',
+          ],
+          [
+            'Meta (WhatsApp Business)',
+            "Sends invoices, reminders and payment confirmations to tenants, and alerts to landlords. Receives tenants' replies and receipt images",
+            'Global',
+          ],
         ]}
       />
       <Para>
-        <strong>Coming soon</strong> (we'll update this list when they go live):
+        <strong>What Google Gemini reads.</strong> From an ID card or passport: name, ID number,
+        date of birth, gender, address and nationality. From a tenancy agreement: the tenant's name,
+        ID number, nationality, email and phone, rent, deposits, dates and the property address.
+        From a payout QR image: the payment code inside it. From a receipt photo: amount, date,
+        bank and reference number. Gemini sends the result back to Rentlo.
       </Para>
-      <LegalTable
-        headers={['Provider', 'What they do', "Where they're based"]}
-        rows={[
-          ['Curlec', 'Collects rent via direct debit', 'Malaysia'],
-          ['Meta (WhatsApp Business)', 'Sends tenant notifications', 'Global'],
-        ]}
-      />
       <H3>When the law requires it</H3>
       <Para>We may hand over your data if:</Para>
       <Ul
@@ -204,7 +217,7 @@ export function LegalPrivacy() {
           ],
           ['Payment and billing records', '7 years (required by Malaysian tax law)'],
           ['Support messages', '3 years from your last message'],
-          ['Inactive accounts', '12 months after your last login — then we delete it'],
+          ['Properties you move to the bin', '90 days in the bin, then permanently deleted'],
         ]}
       />
       <Para>
@@ -218,8 +231,8 @@ export function LegalPrivacy() {
       <Ul
         items={[
           <><strong>Everything is encrypted</strong> — in transit (HTTPS) and at rest (in the database)</>,
-          <><strong>Access is restricted</strong> — only authorised people can see personal data</>,
-          <><strong>We use strong authentication</strong> — passwords must meet minimum standards</>,
+          <><strong>Access is restricted</strong> — each landlord can only see their own data</>,
+          <><strong>We use one-time codes</strong> — you sign in with a code sent to your email or phone, and changing your bank details needs another code</>,
           <><strong>Our providers are vetted</strong> — we choose providers with established security track records</>,
           <><strong>We review regularly</strong> — security practices are checked and updated</>,
         ]}
@@ -257,7 +270,7 @@ export function LegalPrivacy() {
       <H3>Handle their requests</H3>
       <Para>
         If a tenant asks to see, correct, or delete their data — that's your job to respond. We'll
-        help you technically (export tools, deletion features), but the obligation is yours.
+        help where we can (email us), but the obligation is yours.
       </Para>
       <H3>Tell them about breaches</H3>
       <Para>
@@ -354,7 +367,7 @@ export function LegalPrivacy() {
           "We'll email you at least 14 days before it takes effect",
           'We\'ll update the "Last Updated" date at the top',
           'If you keep using Rentlo after the change, that counts as acceptance',
-          'If you disagree, you can cancel your subscription before the change kicks in',
+          'If you disagree, you can stop using Rentlo before the change kicks in',
         ]}
       />
 
