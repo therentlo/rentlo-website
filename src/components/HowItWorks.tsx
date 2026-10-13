@@ -16,9 +16,9 @@ export function HowItWorks({ localeCode }: Props) {
 
   const steps = [
     { n: '01', t: 'Add your tenant', body: 'Name, unit, rent amount, due day. Three minutes the first time. Zero next month.', time: '~3 min', mine: true },
-    { n: '02', t: 'Rentlo sends the reminder', body: 'A polite nudge before rent is due, on the day, and if it is late. In the language and tone you set.', time: 'Automatic', mine: false },
+    { n: '02', t: 'Rentlo sends the reminder', body: 'Rentlo sends the invoice before rent is due and a polite reminder if it\'s late — by WhatsApp and email.', time: 'Automatic', mine: false },
     { n: '03', t: 'Tenant pays', body: `Through ${payVia}, with a unique reference. Rentlo watches for it.`, time: 'Their schedule', mine: false },
-    { n: '04', t: 'Receipt filed automatically', body: 'Match found, invoice marked paid, branded receipt emailed, dashboard updated. You did nothing.', time: '< 1 sec', mine: false },
+    { n: '04', t: 'Receipt filed automatically', body: 'Your tenant sends the payment slip on WhatsApp. Rentlo reads it, finds the invoice and tells you. You mark it paid, and the receipt goes out by itself.', time: '< 1 sec', mine: false },
   ]
 
   return (

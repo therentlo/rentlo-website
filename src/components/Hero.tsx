@@ -110,6 +110,7 @@ export function Hero({ locale }: Props) {
         />
         <div className="relative z-10 max-w-[1280px] mx-auto px-6">
           <DashStage locale={locale} />
+          <p className="text-center text-[12px] text-muted-2 mt-4 mb-0">Sample data</p>
         </div>
       </div>
     </section>
