@@ -12,16 +12,12 @@ export function Footer() {
               <img src={rentloLogoNav} alt="Rentlo" height={24} style={{ height: 24, width: 'auto' }} />
             </div>
             <p className="text-muted text-[15px] mt-5 mb-0 max-w-[300px] leading-[1.55]">
-              The quiet property manager for independent landlords across Southeast Asia.
+              The quiet property manager for independent landlords in Malaysia.
             </p>
             <div className="flex gap-4 text-muted text-[13.5px] mt-5">
               <span className="inline-flex gap-2 items-center">
                 <Flag id="flag-my" />
                 Malaysia
-              </span>
-              <span className="inline-flex gap-2 items-center">
-                <Flag id="flag-kh" />
-                Cambodia
               </span>
             </div>
           </div>
@@ -51,7 +47,7 @@ export function Footer() {
         </div>
 
         <div className="flex justify-between items-center pt-7 border-t border-line text-muted text-[13.5px] flex-wrap gap-4">
-          <span>© 2026 Rentlo. Built for Southeast Asia.</span>
+          <span>© 2026 Rentlo. Built for Malaysia.</span>
           <span>
             <a href="mailto:hello@therentlo.com" className="hover:text-teal transition-colors">
               hello@therentlo.com

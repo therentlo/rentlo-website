@@ -55,7 +55,6 @@ export function MatchMock({ locale }: Props) {
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[14px] font-semibold text-navy tracking-[-0.01em]">Paid · receipt sent</div>
-          <div className="text-[12.5px] text-muted">0.8 seconds after bank notification</div>
         </div>
       </MatchRow>
     </div>

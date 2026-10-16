@@ -62,9 +62,9 @@ export function Features({ locale }: Props) {
 
           <FeatureBlock
             reverse={false}
-            kicker="03 — Tax-ready receipts"
+            kicker="03 — Receipts"
             title={<>Every receipt, filed<br />the moment it's paid.</>}
-            lead="Branded, numbered. Stored forever — not in your inbox. Ready to hand to your accountant or the tax office on day one."
+            lead="Branded, numbered. Stored forever — not in your inbox."
             bullets={[
               'Auto-emailed to the tenant the second the payment matches.',
               'Shows your name to your tenant.',
@@ -73,9 +73,6 @@ export function Features({ locale }: Props) {
             visualClass="border border-line"
           />
         </div>
-
-        {/* Metrics bar */}
-        <MetricsBar />
       </div>
     </section>
   )
@@ -124,34 +121,6 @@ function FeatureBlock({ reverse, kicker, title, lead, bullets, visual, visualCla
       <div className={`relative rounded-[24px] min-h-[440px] overflow-hidden ${visualClass} ${reverse ? 'order-1 md:order-none' : ''}`}>
         {visual}
       </div>
-    </div>
-  )
-}
-
-function MetricsBar() {
-  const ref = useReveal()
-  const metrics = [
-    { n: '94', u: '%', l: 'on-time payment rate after month 2' },
-    { n: '3', u: 'min', l: 'to set up your first tenant' },
-    { n: '0', u: '', l: 'awkward "hi, just checking…" messages' },
-    { n: '4', u: 'hrs', l: 'saved per month, per 5 units' },
-  ]
-
-  return (
-    <div
-      ref={ref}
-      className="reveal metrics-grid gap-px bg-line border border-line rounded-[20px] overflow-hidden mt-20"
-      style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}
-    >
-      {metrics.map((m, i) => (
-        <div key={i} className="bg-white px-7 py-9 text-left">
-          <div className="font-medium text-navy tracking-[-0.03em] leading-none mb-2" style={{ fontSize: 'clamp(36px,4vw,56px)' }}>
-            {m.n}
-            {m.u && <span className="text-[0.55em] text-teal font-medium">{m.u}</span>}
-          </div>
-          <div className="text-[13.5px] text-muted leading-[1.4]">{m.l}</div>
-        </div>
-      ))}
     </div>
   )
 }
