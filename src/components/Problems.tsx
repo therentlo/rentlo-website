@@ -31,19 +31,16 @@ export function Problems({ locale }: Props) {
             icon={<ClockIcon />}
             title={<>Tenants forget<br />to pay.</>}
             body={'Rent is due on the 1st. On the 5th, you\'re the bad guy typing “Hi, just checking in…” for the third month in a row.'}
-            quote='"I hate sending that message more than they hate getting it."'
           />
           <ProblemCard
             icon={<FileStackIcon />}
             title={<>Receipts live<br />in four places.</>}
             body="Some are in WhatsApp. Some in email. One is a photo of a bank slip on your desk. At tax time, you are a detective."
-            quote={locale.problem2Quote}
           />
           <ProblemCard
             icon={<ChartDownIcon />}
             title={<>You never see<br />the real picture.</>}
             body="Who's late? What did you actually collect this year? Is Unit B making money? The numbers are there — just scattered."
-            quote={locale.problem3Quote}
           />
         </div>
       </div>
@@ -51,7 +48,7 @@ export function Problems({ locale }: Props) {
   )
 }
 
-function ProblemCard({ icon, title, body, quote }: { icon: React.ReactNode; title: React.ReactNode; body: string; quote: string }) {
+function ProblemCard({ icon, title, body }: { icon: React.ReactNode; title: React.ReactNode; body: string }) {
   return (
     <div className="bg-white px-9 py-11 flex flex-col gap-[18px] transition-colors hover:bg-canvas">
       <div className="w-11 h-11 rounded-xl bg-navy text-white flex items-center justify-center">
@@ -59,7 +56,6 @@ function ProblemCard({ icon, title, body, quote }: { icon: React.ReactNode; titl
       </div>
       <h3 className="text-[22px] font-semibold text-navy tracking-[-0.02em] leading-[1.2] m-0">{title}</h3>
       <p className="text-muted text-[16px] leading-[1.55] m-0">{body}</p>
-      <div className="mt-auto pt-5 border-t border-line-2 text-[14px] text-muted-2 italic leading-[1.5]">{quote}</div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './index.css'
 import { App } from './App'
+import { About } from './pages/About'
 import { LegalHub } from './pages/legal/LegalHub'
 import { LegalPrivacy } from './pages/legal/Privacy'
 import { LegalTerms } from './pages/legal/Terms'
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/about" element={<About />} />
 
         {/* Redirects from legacy URLs */}
         <Route path="/privacy" element={<Navigate to="/legal/privacy" replace />} />

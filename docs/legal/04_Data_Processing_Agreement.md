@@ -1,7 +1,7 @@
 # Data Processing Agreement
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 1 April 2026
+**Last Updated:** 10 October 2026
 
 ---
 
@@ -64,8 +64,8 @@ Tenant data flowing through Rentlo may include:
 - **Contact:** Phone, email, address
 - **Financial:** Bank details (for payment matching), payment history, outstanding balances
 - **Tenancy:** Lease terms, deposit amounts, move-in/move-out dates
-- **Communications:** Reminders sent, receipts generated
-- **Documents:** Tenancy agreements, supporting documents you upload
+- **Communications:** Invoices and reminders sent, tenants' WhatsApp replies and receipt images
+- **Documents:** Signed tenancy agreements you upload, ID images, receipt images
 
 ### Whose data
 
@@ -78,9 +78,9 @@ Tenant data flowing through Rentlo may include:
 
 - Tenancy management
 - Rent invoicing and payment tracking
-- Automated reminders (email, and in future, WhatsApp)
+- Automated invoices, reminders and payment confirmations (email and WhatsApp)
 - Document storage and retrieval
-- Compliance reporting (e.g., LHDN e-invoicing when applicable)
+- Reading uploaded documents and WhatsApp receipt photos with OCR
 
 ---
 
@@ -111,7 +111,7 @@ Only upload what you need for property management. Keep it current. Don't upload
 
 ### Handle tenant requests
 
-If a tenant asks to access, correct, or delete their data — **that's your job**. We'll provide the technical tools (data export, correction, deletion features in the app), but the legal obligation sits with you.
+If a tenant asks to access, correct, or delete their data — **that's your job**. You can correct most data in the app. For exports and deletions, email us and we'll help, but the legal obligation sits with you.
 
 ### Decide on retention
 
@@ -139,10 +139,9 @@ The one exception: we may use **anonymised, aggregated** data (no personal ident
 We implement appropriate security measures including:
 
 - Encryption in transit (HTTPS/TLS) and at rest
-- Role-based access controls
+- Access controls so each landlord sees only their own data
 - Regular security reviews
 - Subprocessor due diligence
-- Backup and disaster recovery
 
 A more detailed list is available on request.
 
@@ -157,7 +156,7 @@ We use third-party companies (listed in Section 8) to help run Rentlo. Before ad
 
 ### We help with tenant requests
 
-We'll provide reasonable technical assistance when you need to respond to a tenant's data request — exports, corrections, deletions through the platform. We may charge for assistance that goes significantly beyond standard features.
+We'll provide reasonable technical assistance when you need to respond to a tenant's data request — corrections in the platform, exports and deletions on request. We may charge for assistance that goes significantly beyond standard features.
 
 ### We tell you about breaches
 
@@ -184,19 +183,14 @@ Tenant data is retained while your account is active and for **7 years** after t
 
 These companies help us run Rentlo. Each is contractually bound to protect personal data:
 
-| Company | What they do | Where they're based |
+| Company | What they do and what they receive | Where they're based |
 |---|---|---|
-| Supabase Inc. | Database, authentication | Singapore (AWS) |
-| Cloudflare Inc. | DNS, security, CDN | Global |
-| Resend Inc. | Transactional email | United States |
-| Google LLC (Gemini API) | OCR document processing | United States |
-
-**Coming soon** (we'll update this list and notify you before they go live):
-
-| Company | What they'll do | Where they're based |
-|---|---|---|
-| Curlec Sdn Bhd | Direct debit, recurring payments | Malaysia |
-| Meta Platforms (WhatsApp Business API) | Tenant notifications | Global |
+| Supabase Inc. | Database, login and file storage (including uploaded ID, QR, contract and receipt files) | Singapore (AWS) |
+| Cloudflare Inc. | Hosts therentlo.com and app.therentlo.com; DNS, security, CDN | Global |
+| Resend Inc. | Sends invoice and overdue-reminder emails and alert emails | United States |
+| Google LLC (Gemini API) | OCR. Reads a landlord's ID card image, a tenancy agreement PDF (which includes the tenant's name, ID number, contact details, rent and dates), a payout QR image, and payment receipt photos that tenants send over WhatsApp | United States |
+| Google LLC (Places API) | Address suggestions. Receives the address text a landlord types when adding a property | United States |
+| Meta Platforms (WhatsApp Business API) | Sends invoices, reminders and payment confirmations to tenants and alerts to landlords. Receives tenants' replies and receipt images | Global |
 
 If we add a new subprocessor and you object within 14 days, and we can't address your concern, you may terminate your subscription.
 
@@ -208,7 +202,7 @@ Some of our subprocessors are outside Malaysia. By using Rentlo, you consent to 
 
 - **Singapore** (Supabase database)
 - **United States** (Resend, Google)
-- **Global edge networks** (Cloudflare, for caching and security)
+- **Global** (Cloudflare edge networks for caching and security; Meta for WhatsApp)
 
 We protect these transfers through:
 - Contractual obligations on every subprocessor
@@ -223,16 +217,16 @@ We protect these transfers through:
 
 ### While you're a customer
 
-You can delete tenant data anytime through the app. Deletion is logical first (marked as deleted), then physical (removed from active systems) within **30 days**.
+In the app you can move a tenant out and move a property to the bin. A property in the bin is permanently deleted after **90 days**. To delete other tenant data earlier, email us.
 
 ### When your subscription ends
 
-- You have **30 days** to export all your data in machine-readable format
+- You have **30 days** to ask us for a copy of all your data
 - After 30 days, we delete your data from active systems within **60 days**
 
 **Exceptions — we may keep:**
 - Data required by law (financial records for up to 7 years under Malaysian tax law)
-- Backups that overwrite on a rolling cycle (typically within 90 days)
+- Copies taken before we change our systems (kept up to 90 days)
 - Anonymised, aggregated data (no longer personally identifiable)
 
 If you need faster deletion, let us know in writing.

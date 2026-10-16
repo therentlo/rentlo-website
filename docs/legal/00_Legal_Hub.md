@@ -1,6 +1,6 @@
 # Legal
 
-**Last Updated:** 1 April 2026
+**Last Updated:** 10 October 2026
 
 ---
 
@@ -38,7 +38,7 @@ A ready-to-use template you can give to your tenants explaining how their data i
 | Do we sell your data? | **No. Never.** |
 | Do we use your data for advertising? | **No.** |
 | Where is your data stored? | **Singapore** (Supabase, AWS region) |
-| Can you delete your data? | **Yes** — email us or use the app |
+| Can you delete your data? | **Yes** — email us. Properties you move to the bin in the app are deleted after 90 days |
 | Do we comply with PDPA? | **Yes** — including the 2024 amendments |
 | Who is the Data Protection Officer? | **Mah Yik Choong** (mah@therentlo.com) |
 

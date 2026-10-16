@@ -16,7 +16,7 @@ export function LegalTerms() {
     <LegalLayout
       title="Terms of Service"
       effectiveDate="1 April 2026"
-      lastUpdated="1 April 2026"
+      lastUpdated="16 October 2026"
     >
       <Callout>
         Rentlo is a tool for landlords to manage properties, tenants, and rent. You own your data.
@@ -62,8 +62,8 @@ export function LegalTerms() {
         items={[
           "A property management company — we don't manage your property for you",
           "A real estate agent — we don't find tenants or negotiate leases",
-          "A law firm — our templates are tools, not legal advice",
-          "A bank or payment institution — we generate invoices and QR codes, but payments go directly to your bank account",
+          "A law firm — nothing in Rentlo is legal advice",
+          "A bank or payment institution — we generate invoices that show your bank details and payout QR code, but payments go directly to your bank account",
           "An insurance provider — we don't guarantee tenant behaviour or rent payment",
         ]}
       />
@@ -93,80 +93,32 @@ export function LegalTerms() {
       </Para>
       <Ul
         items={[
-          'Keep your login credentials private',
+          'Keep your sign-in codes and your email and phone private',
           'Everything that happens under your account is on you',
           'Tell us immediately if someone accesses your account without permission (email hey@therentlo.com)',
         ]}
       />
       <Para>
-        We're not liable if someone gets into your account because you shared your password or
-        didn't secure it.
+        We're not liable if someone gets into your account because you shared your sign-in code or
+        didn't secure your email or phone.
       </Para>
 
       {/* 5 */}
       <H2>5. Plans and Pricing</H2>
-      <H3>How billing works</H3>
+      <Callout>
+        <strong>Rentlo is free during the pilot.</strong> We do not charge or collect payments yet.
+      </Callout>
+      <H3>When paid plans start</H3>
       <Para>
-        Rentlo offers tiered subscription plans based on how many tenants you manage. Current
-        pricing is at therentlo.com/pricing.
+        Pricing comes later, and pilot landlords get the best deal. Before we charge anything:
       </Para>
       <Ul
         items={[
-          'Subscriptions are billed monthly in advance',
-          'Payment is due on or before the renewal date',
-          'We currently accept bank transfer; future payment methods (payment gateways, direct debit) will be announced',
+          <>We'll publish the prices and give you at least <strong>30 days' notice</strong> by email</>,
+          "We'll add the billing terms (how to pay, late payment and refunds) to these Terms and tell you when we do",
+          'You can stop using Rentlo before any charge applies',
         ]}
       />
-      <H3>Founding Members</H3>
-      <Para>
-        The first <strong>50 paying customers</strong> get permanent discounted pricing — as long
-        as you stay continuously subscribed. Here's how it works:
-      </Para>
-      <Ul
-        items={[
-          'Your rate is locked at whatever was shown when you first paid',
-          <>If your subscription lapses for more than <strong>30 days</strong>, the founding rate is gone</>,
-          "Founding pricing doesn't transfer if you cancel and create a new account",
-          'Founding Members are exempt from future price increases',
-        ]}
-      />
-      <H3>Free tier</H3>
-      <Para>
-        We offer a free tier for managing <strong>one tenant</strong>. It's provided as-is, with
-        no uptime or support guarantees.
-      </Para>
-      <H3>What happens if you don't pay</H3>
-      <LegalTable
-        headers={['Timeline', 'What happens']}
-        rows={[
-          ['Due date passes', '7-day grace period — everything works normally'],
-          [
-            'After 7 days',
-            <>
-              Your account goes <strong>read-only</strong> (you can view data but can't create or
-              edit)
-            </>,
-          ],
-          ['After 30 days', <><strong>Account is suspended</strong> (no access)</>],
-          [
-            'After 90 days',
-            <>
-              Account and <strong>all data may be permanently deleted</strong>
-            </>,
-          ],
-        ]}
-      />
-      <H3>Refunds</H3>
-      <Para>
-        <strong>All payments are non-refundable.</strong> If you cancel mid-cycle, your access
-        continues until the end of the paid period, but no money comes back.
-      </Para>
-      <H3>Price changes</H3>
-      <Para>
-        We can change pricing for new customers anytime. For existing paying customers, we'll give
-        at least <strong>30 days' notice</strong> before any price increase. Founding Members are
-        exempt.
-      </Para>
 
       {/* 6 */}
       <H2>6. Rules of Use</H2>
@@ -206,7 +158,7 @@ export function LegalTerms() {
             <strong>Store and process</strong> it to deliver the Service
           </>,
           <>
-            <strong>Back it up</strong> for security and disaster recovery
+            <strong>Back it up</strong> before we change our systems
           </>,
           <>
             <strong>Anonymise and aggregate</strong> it for product analytics (nothing personally
@@ -325,8 +277,7 @@ export function LegalTerms() {
       <H2>12. Ending Your Subscription</H2>
       <H3>You cancel</H3>
       <Para>
-        You can cancel anytime via your account settings or by emailing hey@therentlo.com. Your
-        access continues until the end of your current billing period.
+        You can cancel anytime by emailing hey@therentlo.com.
       </Para>
       <H3>We cancel</H3>
       <Para>
@@ -343,26 +294,27 @@ export function LegalTerms() {
       <H3>What happens next</H3>
       <Ul
         items={[
-          <>You have <strong>30 days</strong> to export your data after termination</>,
+          <>You have <strong>30 days</strong> to ask us for a copy of your data after termination</>,
           "After 30 days, we may delete everything (except what the law says we must keep)",
           'The sections on intellectual property, indemnification, liability limits, and governing law survive termination',
         ]}
       />
 
       {/* 13 */}
-      <H2>13. Tenancy Agreement Templates — Disclaimer</H2>
+      <H2>13. Tenancy Agreements — Disclaimer</H2>
       <Para>
-        Rentlo provides tenancy agreement templates as a convenience feature.
+        Rentlo does not write tenancy agreements. It keeps a record of the contract details you
+        enter and stores the signed copy you upload. You use your own agreement.
       </Para>
       <Callout>
-        <strong>These templates are not legal advice.</strong> They are starting points that you
-        must review, customise, and verify for your specific situation. Rentlo does not guarantee
-        that any template is suitable for your property, jurisdiction, or tenancy arrangement.
+        <strong>Nothing in Rentlo is legal advice.</strong> You must review and verify your
+        agreement for your specific situation. Rentlo does not guarantee that any agreement is
+        suitable for your property, jurisdiction, or tenancy arrangement.
       </Callout>
       <Para>You are responsible for:</Para>
       <Ul
         items={[
-          'Reviewing and adapting every template before use',
+          'Reviewing every agreement before you sign it',
           'Ensuring compliance with the Contracts Act 1950 and relevant state laws',
           <>
             <strong>Stamping the agreement with LHDN</strong> under the Stamp Act 1949 —
@@ -372,8 +324,8 @@ export function LegalTerms() {
         ]}
       />
       <Para>
-        Rentlo is not liable for any loss, dispute, or legal consequence arising from your use of
-        our templates.
+        Rentlo is not liable for any loss, dispute, or legal consequence arising from your
+        tenancy agreement.
       </Para>
 
       {/* 14 */}
@@ -386,7 +338,7 @@ export function LegalTerms() {
           "We don't promise it will always work perfectly",
           "We don't promise it's error-free or uninterrupted",
           "We don't promise the data in your account is 100% accurate (you enter it)",
-          "We don't promise our templates will hold up in every legal situation",
+          "We don't promise any agreement you use will hold up in every legal situation",
         ]}
       />
       <Callout>
@@ -488,7 +440,7 @@ export function LegalTerms() {
           <>We'll email you at least <strong>14 days</strong> before they take effect</>,
           'We\'ll update the "Last Updated" date at the top',
           'Continuing to use Rentlo after the change means you accept the new Terms',
-          'If you disagree, cancel before the change takes effect',
+          'If you disagree, stop using Rentlo before the change takes effect',
         ]}
       />
 

@@ -16,7 +16,7 @@ export function LegalDPA() {
     <LegalLayout
       title="Data Processing Agreement"
       effectiveDate="1 April 2026"
-      lastUpdated="1 April 2026"
+      lastUpdated="10 October 2026"
     >
       <Callout>
         When you use Rentlo to manage tenants, you upload their personal data to our platform.
@@ -111,8 +111,8 @@ export function LegalDPA() {
           <><strong>Contact:</strong> Phone, email, address</>,
           <><strong>Financial:</strong> Bank details (for payment matching), payment history, outstanding balances</>,
           <><strong>Tenancy:</strong> Lease terms, deposit amounts, move-in/move-out dates</>,
-          <><strong>Communications:</strong> Reminders sent, receipts generated</>,
-          <><strong>Documents:</strong> Tenancy agreements, supporting documents you upload</>,
+          <><strong>Communications:</strong> Invoices and reminders sent, tenants' WhatsApp replies and receipt images</>,
+          <><strong>Documents:</strong> Signed tenancy agreements you upload, ID images, receipt images</>,
         ]}
       />
       <H3>Whose data</H3>
@@ -129,9 +129,9 @@ export function LegalDPA() {
         items={[
           'Tenancy management',
           'Rent invoicing and payment tracking',
-          'Automated reminders (email, and in future, WhatsApp)',
+          'Automated invoices, reminders and payment confirmations (email and WhatsApp)',
           'Document storage and retrieval',
-          'Compliance reporting (e.g., LHDN e-invoicing when applicable)',
+          'Reading uploaded documents and WhatsApp receipt photos with OCR',
         ]}
       />
 
@@ -178,7 +178,7 @@ export function LegalDPA() {
       <H3>Handle tenant requests</H3>
       <Para>
         If a tenant asks to access, correct, or delete their data — <strong>that's your job</strong>.
-        We'll provide the technical tools (data export, correction, deletion features in the app),
+        You can correct most data in the app. For exports and deletions, email us and we'll help,
         but the legal obligation sits with you.
       </Para>
       <H3>Decide on retention</H3>
@@ -211,10 +211,9 @@ export function LegalDPA() {
       <Ul
         items={[
           'Encryption in transit (HTTPS/TLS) and at rest',
-          'Role-based access controls',
+          'Access controls so each landlord sees only their own data',
           'Regular security reviews',
           'Subprocessor due diligence',
-          'Backup and disaster recovery',
         ]}
       />
       <Para>A more detailed list is available on request.</Para>
@@ -234,7 +233,7 @@ export function LegalDPA() {
       <H3>We help with tenant requests</H3>
       <Para>
         We'll provide reasonable technical assistance when you need to respond to a tenant's data
-        request — exports, corrections, deletions through the platform. We may charge for
+        request — corrections in the platform, exports and deletions on request. We may charge for
         assistance that goes significantly beyond standard features.
       </Para>
       <H3>We tell you about breaches</H3>
@@ -268,22 +267,26 @@ export function LegalDPA() {
         These companies help us run Rentlo. Each is contractually bound to protect personal data:
       </Para>
       <LegalTable
-        headers={['Company', 'What they do', "Where they're based"]}
+        headers={['Company', 'What they do and what they receive', "Where they're based"]}
         rows={[
-          ['Supabase Inc.', 'Database, authentication', 'Singapore (AWS)'],
-          ['Cloudflare Inc.', 'DNS, security, CDN', 'Global'],
-          ['Resend Inc.', 'Transactional email', 'United States'],
-          ['Google LLC (Gemini API)', 'OCR document processing', 'United States'],
-        ]}
-      />
-      <Para>
-        <strong>Coming soon</strong> (we'll update this list and notify you before they go live):
-      </Para>
-      <LegalTable
-        headers={['Company', "What they'll do", "Where they're based"]}
-        rows={[
-          ['Curlec Sdn Bhd', 'Direct debit, recurring payments', 'Malaysia'],
-          ['Meta Platforms (WhatsApp Business API)', 'Tenant notifications', 'Global'],
+          ['Supabase Inc.', 'Database, login and file storage (including uploaded ID, QR, contract and receipt files)', 'Singapore (AWS)'],
+          ['Cloudflare Inc.', 'Hosts therentlo.com and app.therentlo.com; DNS, security, CDN', 'Global'],
+          ['Resend Inc.', 'Sends invoice and overdue-reminder emails and alert emails', 'United States'],
+          [
+            'Google LLC (Gemini API)',
+            "OCR. Reads a landlord's ID card image, a tenancy agreement PDF (which includes the tenant's name, ID number, contact details, rent and dates), a payout QR image, and payment receipt photos that tenants send over WhatsApp",
+            'United States',
+          ],
+          [
+            'Google LLC (Places API)',
+            'Address suggestions. Receives the address text a landlord types when adding a property',
+            'United States',
+          ],
+          [
+            'Meta Platforms (WhatsApp Business API)',
+            "Sends invoices, reminders and payment confirmations to tenants and alerts to landlords. Receives tenants' replies and receipt images",
+            'Global',
+          ],
         ]}
       />
       <Para>
@@ -301,7 +304,7 @@ export function LegalDPA() {
         items={[
           <><strong>Singapore</strong> (Supabase database)</>,
           <><strong>United States</strong> (Resend, Google)</>,
-          <><strong>Global edge networks</strong> (Cloudflare, for caching and security)</>,
+          <><strong>Global</strong> (Cloudflare edge networks for caching and security; Meta for WhatsApp)</>,
         ]}
       />
       <Para>We protect these transfers through:</Para>
@@ -321,13 +324,14 @@ export function LegalDPA() {
       <H2>10. Getting Your Data Back (and Deleting It)</H2>
       <H3>While you're a customer</H3>
       <Para>
-        You can delete tenant data anytime through the app. Deletion is logical first (marked as
-        deleted), then physical (removed from active systems) within <strong>30 days</strong>.
+        In the app you can move a tenant out and move a property to the bin. A property in the bin is
+        permanently deleted after <strong>90 days</strong>. To delete other tenant data earlier, email
+        us.
       </Para>
       <H3>When your subscription ends</H3>
       <Ul
         items={[
-          <>You have <strong>30 days</strong> to export all your data in machine-readable format</>,
+          <>You have <strong>30 days</strong> to ask us for a copy of all your data</>,
           'After 30 days, we delete your data from active systems within 60 days',
         ]}
       />
@@ -337,7 +341,7 @@ export function LegalDPA() {
       <Ul
         items={[
           'Data required by law (financial records for up to 7 years under Malaysian tax law)',
-          'Backups that overwrite on a rolling cycle (typically within 90 days)',
+          'Copies taken before we change our systems (kept up to 90 days)',
           'Anonymised, aggregated data (no longer personally identifiable)',
         ]}
       />

@@ -1,13 +1,13 @@
 # Cookie Notice
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 1 April 2026
+**Last Updated:** 10 October 2026
 
 ---
 
 ## The Short Version
 
-We use cookies to keep you logged in, protect your account, and understand how people use Rentlo so we can improve it. We don't use cookies for advertising. You can control most of them through your browser settings.
+We use browser storage to keep you signed in and protect your account. We don't use analytics or advertising cookies. You can control most of it through your browser settings.
 
 ---
 
@@ -29,7 +29,6 @@ We also use similar technologies:
 
 - **Local storage** — data stored in your browser that persists until you clear it
 - **Session storage** — data that disappears when you close the browser tab
-- **Pixels and beacons** — tiny images that help us track usage
 
 For simplicity, we call all of these "cookies" in this notice.
 
@@ -43,27 +42,21 @@ These make Rentlo work. Without them, you can't log in or use the platform.
 
 | Cookie | What it does | How long it lasts |
 |---|---|---|
-| `sb-*-auth-token` | Keeps you logged in (Supabase auth) | Session to 1 year |
-| `__cf_bm` | Cloudflare bot protection | 30 minutes |
-| `cf_clearance` | Cloudflare security verification | Up to 1 year |
+| `sb-*-auth-token` | Keeps you signed in (Supabase). Kept in your browser's local storage, not sent as a cookie | Until you sign out |
+| `__cf_bm` | Cloudflare bot protection (only if Cloudflare sets it) | 30 minutes |
+| `cf_clearance` | Cloudflare security verification (only if Cloudflare sets it) | Up to 1 year |
 
 ### Functional cookies (make things nicer)
 
 These remember your preferences so the experience feels smoother.
 
-**Examples:** language settings, dark/light mode, remembered email for faster login.
+**Examples:** your country choice on the website, and a counter that limits wrong one-time-code attempts in the app.
 
 **Can you turn them off?** Yes, but some convenience features won't work.
 
-### Analytics cookies (help us improve)
+### Analytics cookies
 
-These show us how people use Rentlo — which pages get visited, which features get used, where things break.
-
-**What we collect:** Anonymised page views, feature usage counts, performance metrics (load times, errors).
-
-**What we don't do:** We don't track you across other websites. We don't build an advertising profile.
-
-**Can you turn them off?** Yes — see Section 5.
+We do not use analytics cookies or tracking tools on therentlo.com or in the Rentlo app. We don't track you across other websites and we don't build an advertising profile.
 
 ---
 
@@ -74,7 +67,7 @@ Some cookies come from services we use to run Rentlo:
 | Service | Why we use it | What cookies it may set |
 |---|---|---|
 | Supabase | User authentication and sessions | Auth tokens |
-| Cloudflare | Site security and content delivery | Bot protection, security challenge cookies |
+| Cloudflare | Site security and content delivery | Bot protection, security challenge cookies (if triggered) |
 
 **We do not currently use:**
 - Google Analytics
@@ -102,7 +95,6 @@ Every major browser lets you manage cookies. Here's where to look:
 |---|---|
 | Essential | **You can't use Rentlo at all** — login won't work |
 | Functional | Some preferences won't be remembered |
-| Analytics | No impact on your experience |
 
 ### On mobile
 

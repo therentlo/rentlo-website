@@ -39,11 +39,7 @@ export function Features({ locale }: Props) {
             kicker="01 — Auto reminders"
             title="The polite nudge, sent on your behalf."
             lead={locale.f1Lead}
-            bullets={[
-              'Three soft touches — never nagging, never late.',
-              'WhatsApp, email, or SMS — whichever your tenant actually reads.',
-              'You see every message. You can edit every message.',
-            ]}
+            bullets={[]}
             visual={
               <div className="rounded-[24px] min-h-[440px] overflow-hidden flex items-center justify-center p-10 bg-gradient-to-b from-[#F7FBFB] to-[#EEF7F6]">
                 <PhoneMock locale={locale} />
@@ -66,21 +62,17 @@ export function Features({ locale }: Props) {
 
           <FeatureBlock
             reverse={false}
-            kicker="03 — Tax-ready receipts"
+            kicker="03 — Receipts"
             title={<>Every receipt, filed<br />the moment it's paid.</>}
-            lead="Branded, bilingual, numbered. Stored forever — not in your inbox. Ready to hand to your accountant or the tax office on day one."
+            lead="Branded, numbered, and kept in Rentlo — not lost in your inbox."
             bullets={[
-              'Auto-emailed to the tenant the second the payment matches.',
-              'Branded with your name — not ours.',
-              locale.f3Export,
+              'Sent to your tenant as soon as you mark it paid.',
+              'Shows your name to your tenant.',
             ]}
             visual={<ReceiptMock locale={locale} />}
             visualClass="border border-line"
           />
         </div>
-
-        {/* Metrics bar */}
-        <MetricsBar />
       </div>
     </section>
   )
@@ -114,6 +106,7 @@ function FeatureBlock({ reverse, kicker, title, lead, bullets, visual, visualCla
           {title}
         </h3>
         <p className="text-[18.5px] text-muted leading-[1.55] tracking-[-0.005em] mb-8">{lead}</p>
+        {bullets.length > 0 && (
         <ul className="list-none p-0 m-0 flex flex-col gap-3.5">
           {bullets.map((b, i) => (
             <li key={i} className="flex gap-3 items-start text-[15.5px] text-ink-2 leading-[1.5]">
@@ -122,39 +115,12 @@ function FeatureBlock({ reverse, kicker, title, lead, bullets, visual, visualCla
             </li>
           ))}
         </ul>
+        )}
       </div>
 
       <div className={`relative rounded-[24px] min-h-[440px] overflow-hidden ${visualClass} ${reverse ? 'order-1 md:order-none' : ''}`}>
         {visual}
       </div>
-    </div>
-  )
-}
-
-function MetricsBar() {
-  const ref = useReveal()
-  const metrics = [
-    { n: '94', u: '%', l: 'on-time payment rate after month 2' },
-    { n: '3', u: 'min', l: 'to set up your first tenant' },
-    { n: '0', u: '', l: 'awkward "hi, just checking…" messages' },
-    { n: '4', u: 'hrs', l: 'saved per month, per 5 units' },
-  ]
-
-  return (
-    <div
-      ref={ref}
-      className="reveal metrics-grid gap-px bg-line border border-line rounded-[20px] overflow-hidden mt-20"
-      style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}
-    >
-      {metrics.map((m, i) => (
-        <div key={i} className="bg-white px-7 py-9 text-left">
-          <div className="font-medium text-navy tracking-[-0.03em] leading-none mb-2" style={{ fontSize: 'clamp(36px,4vw,56px)' }}>
-            {m.n}
-            {m.u && <span className="text-[0.55em] text-teal font-medium">{m.u}</span>}
-          </div>
-          <div className="text-[13.5px] text-muted leading-[1.4]">{m.l}</div>
-        </div>
-      ))}
     </div>
   )
 }

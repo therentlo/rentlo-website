@@ -1,14 +1,7 @@
 import { useEffect, useState } from 'react'
-import type { LocaleCode } from '../locales'
-import { CountrySwitcher } from './CountrySwitcher'
 import rentloLogoNav from '../assets/rentlo-logo-nav.png'
 
-interface Props {
-  locale: LocaleCode
-  onLocaleChange: (code: LocaleCode) => void
-}
-
-export function Nav({ locale, onLocaleChange }: Props) {
+export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -61,7 +54,6 @@ export function Nav({ locale, onLocaleChange }: Props) {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-1.5">
-            <CountrySwitcher locale={locale} onChange={onLocaleChange} />
             <a href="https://app.therentlo.com" className="inline-flex items-center gap-1.5 h-10 px-3.5 rounded-full font-medium text-[14.5px] text-ink-2 transition-all hover:text-teal hover:bg-teal-50">
               Log in
             </a>
@@ -112,11 +104,6 @@ export function Nav({ locale, onLocaleChange }: Props) {
                 {l.label}
               </a>
             ))}
-
-            {/* Country switcher */}
-            <div className="pt-6 pb-2">
-              <CountrySwitcher locale={locale} onChange={(c) => { onLocaleChange(c); closeMenu() }} />
-            </div>
 
             {/* Bottom CTAs */}
             <div className="mt-auto pt-6 flex flex-col gap-3">

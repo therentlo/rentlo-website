@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
 import type { LocaleCode } from './locales'
 import { LOCALES } from './locales'
-import { detectCountry } from './lib/detectCountry'
 import { FlagDefs } from './components/Flags'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
@@ -14,30 +12,16 @@ import { FAQ } from './components/FAQ'
 import { CTA } from './components/CTA'
 import { Footer } from './components/Footer'
 
+// Malaysia only until another country is live (country switcher hidden).
+const locale: LocaleCode = 'MY'
+
 export function App() {
-  const [locale, setLocale] = useState<LocaleCode>('MY')
-
-  useEffect(() => {
-    // Respect stored user choice; otherwise detect
-    const stored = localStorage.getItem('rentlo.country') as LocaleCode | null
-    if (stored && LOCALES[stored]) {
-      setLocale(stored)
-      return
-    }
-    detectCountry().then((code) => setLocale(code))
-  }, [])
-
-  function handleLocaleChange(code: LocaleCode) {
-    setLocale(code)
-    localStorage.setItem('rentlo.country', code)
-  }
-
   const L = LOCALES[locale]
 
   return (
     <>
       <FlagDefs />
-      <Nav locale={locale} onLocaleChange={handleLocaleChange} />
+      <Nav />
       <main>
         <Hero locale={L} />
         <BankStrip locale={L} />

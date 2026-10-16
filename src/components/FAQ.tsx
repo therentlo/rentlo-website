@@ -11,24 +11,14 @@ export function FAQ({ localeCode }: Props) {
   const listRef = useReveal()
   const [openIndex, setOpenIndex] = useState(0)
 
-  const banks =
-    localeCode === 'MY' ? 'Maybank, CIMB, Public Bank, RHB, Hong Leong, and DuitNow' :
-    localeCode === 'KH' ? 'ABA, ACLEDA, Wing, Bakong, KHQR, and TrueMoney' :
-    'major regional banks and QR networks'
-
-  const tax =
-    localeCode === 'MY' ? 'LHDN-ready exports' :
-    localeCode === 'KH' ? 'GDT-ready exports' :
-    'tax-ready exports'
-
   const items = [
     {
       q: 'Which banks does Rentlo work with?',
-      a: `Rentlo connects with ${banks}. If your tenants pay through any of these, we can match the payment to the right invoice automatically. We add new banks based on landlord requests — tell us yours.`,
+      a: "Tenants pay the way they already do — any Malaysian bank or DuitNow QR.",
     },
     {
       q: 'Is my financial data safe?',
-      a: "We never see your bank login. Rentlo only reads incoming payment notifications you forward or connect, the same way your accountant might. Data is encrypted in transit and at rest, and you can export or delete everything at any time.",
+      a: "We never see your bank login. Rentlo only stores what you and your tenants send it. Data is encrypted in transit and at rest. Email us to get a copy or have it deleted.",
     },
     {
       q: 'What if a tenant disputes a payment?',
@@ -36,15 +26,11 @@ export function FAQ({ localeCode }: Props) {
     },
     {
       q: "Do my tenants need to install an app?",
-      a: "No. Tenants get reminders via WhatsApp, email, or SMS — whatever they already use — and they pay through their own banking app exactly as they do today. Rentlo runs entirely on your side.",
-    },
-    {
-      q: 'How do I get my data out at tax time?',
-      a: `One click exports a clean PDF or CSV of every receipt for any date range — formatted for your accountant or for ${tax}. No copy-pasting. No spreadsheet surgery.`,
+      a: "No. Rentlo sends the invoice before rent is due and a polite reminder if it's late — by WhatsApp and email. Tenants pay the way they already do — any Malaysian bank or DuitNow QR. Rentlo runs entirely on your side.",
     },
     {
       q: 'When can I actually start using it?',
-      a: "We're onboarding our first wave of landlords now. Join the waitlist and we'll reach out personally — usually within a few days — to get you set up. Free for your first tenant, forever.",
+      a: "We're onboarding our first wave of landlords now. Join the waitlist and we'll reach out personally — usually within a few days — to get you set up. Free during the pilot.",
     },
   ]
 
@@ -89,7 +75,7 @@ export function FAQ({ localeCode }: Props) {
 
         <div className="text-center text-muted text-[14px] mt-12">
           More questions?{' '}
-          <a href="mailto:hello@therentlo.com" className="text-teal-700 font-medium hover:underline">
+          <a href="mailto:hey@therentlo.com" className="text-teal-700 font-medium hover:underline">
             Email us — we read everything.
           </a>
         </div>

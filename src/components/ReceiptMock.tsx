@@ -56,7 +56,7 @@ export function ReceiptMock({ locale }: Props) {
           <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M20 6 9 17l-5-5" />
           </svg>
-          Filed in your records · tax-ready
+          Filed in your records
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export function BankStrip({ locale }: Props) {
     <section className="py-14 border-t border-b border-line bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center text-[12px] font-medium tracking-[0.14em] uppercase text-muted mb-7">
-          Works with the banks your tenants already use
+          Tenants pay the way they already do — any Malaysian bank or DuitNow QR.
         </div>
         <div className="flex justify-center items-center gap-2.5 flex-wrap">
           {locale.banks.map((b) => (
