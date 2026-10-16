@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 10 October 2026
+**Last Updated:** 16 October 2026
 
 ---
 
@@ -166,7 +166,7 @@ We take security seriously:
 
 - **Everything is encrypted** — in transit (HTTPS) and at rest (in the database)
 - **Access is restricted** — each landlord can only see their own data
-- **We use one-time codes** — you sign in with a code sent to your email or phone, and changing your bank details needs another code
+- **We use one-time codes** — you sign in with a code sent to your email, and changing your bank details needs another code
 - **Our providers are vetted** — we choose providers with established security track records
 - **We review regularly** — security practices are checked and updated
 

@@ -16,7 +16,7 @@ export function Pricing() {
             No tiers. No cards. No catch.
           </p>
           <p className="text-[16.5px] text-muted leading-[1.65] tracking-[-0.005em] mb-10 max-w-[520px] mx-auto">
-            We're onboarding our first wave of landlords now. Everything is free during the pilot — invoices, reminders, matching, receipts. You help us get it right, you get it free. Pricing comes later, and early landlords will always get the best deal.
+            We're onboarding our first wave of landlords now. Everything is free during the pilot — invoices, reminders, matching, receipts. You help us get it right, you get it free. Pricing comes later, and pilot landlords get the best deal.
           </p>
           <a
             href="#cta"

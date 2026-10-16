@@ -16,7 +16,7 @@ export function LegalTerms() {
     <LegalLayout
       title="Terms of Service"
       effectiveDate="1 April 2026"
-      lastUpdated="10 October 2026"
+      lastUpdated="16 October 2026"
     >
       <Callout>
         Rentlo is a tool for landlords to manage properties, tenants, and rent. You own your data.
@@ -107,70 +107,18 @@ export function LegalTerms() {
       <H2>5. Plans and Pricing</H2>
       <Callout>
         <strong>Rentlo is free during the pilot.</strong> We do not charge or collect payments yet.
-        This section applies once paid plans start.
       </Callout>
-      <H3>How billing works</H3>
+      <H3>When paid plans start</H3>
       <Para>
-        Rentlo offers tiered subscription plans based on how many tenants you manage. Current
-        pricing is at therentlo.com/pricing.
+        Pricing comes later, and pilot landlords get the best deal. Before we charge anything:
       </Para>
       <Ul
         items={[
-          'Subscriptions are billed monthly in advance',
-          'Payment is due on or before the renewal date',
-          'We currently accept bank transfer; future payment methods (payment gateways, direct debit) will be announced',
+          <>We'll publish the prices and give you at least <strong>30 days' notice</strong> by email</>,
+          "We'll add the billing terms (how to pay, late payment and refunds) to these Terms and tell you when we do",
+          'You can stop using Rentlo before any charge applies',
         ]}
       />
-      <H3>Founding Members</H3>
-      <Para>
-        The first <strong>50 paying customers</strong> get permanent discounted pricing — as long
-        as you stay continuously subscribed. Here's how it works:
-      </Para>
-      <Ul
-        items={[
-          'Your rate is locked at whatever was shown when you first paid',
-          <>If your subscription lapses for more than <strong>30 days</strong>, the founding rate is gone</>,
-          "Founding pricing doesn't transfer if you cancel and create a new account",
-          'Founding Members are exempt from future price increases',
-        ]}
-      />
-      <H3>Free tier</H3>
-      <Para>
-        We offer a free tier for managing <strong>one tenant</strong>. It's provided as-is, with
-        no uptime or support guarantees.
-      </Para>
-      <H3>What happens if you don't pay</H3>
-      <LegalTable
-        headers={['Timeline', 'What happens']}
-        rows={[
-          ['Due date passes', '7-day grace period — everything works normally'],
-          [
-            'After 7 days',
-            <>
-              Your account goes <strong>read-only</strong> (you can view data but can't create or
-              edit)
-            </>,
-          ],
-          ['After 30 days', <><strong>Account is suspended</strong> (no access)</>],
-          [
-            'After 90 days',
-            <>
-              Account and <strong>all data may be permanently deleted</strong>
-            </>,
-          ],
-        ]}
-      />
-      <H3>Refunds</H3>
-      <Para>
-        <strong>All payments are non-refundable.</strong> If you cancel mid-cycle, your access
-        continues until the end of the paid period, but no money comes back.
-      </Para>
-      <H3>Price changes</H3>
-      <Para>
-        We can change pricing for new customers anytime. For existing paying customers, we'll give
-        at least <strong>30 days' notice</strong> before any price increase. Founding Members are
-        exempt.
-      </Para>
 
       {/* 6 */}
       <H2>6. Rules of Use</H2>
@@ -329,8 +277,7 @@ export function LegalTerms() {
       <H2>12. Ending Your Subscription</H2>
       <H3>You cancel</H3>
       <Para>
-        You can cancel anytime by emailing hey@therentlo.com. Your
-        access continues until the end of your current billing period.
+        You can cancel anytime by emailing hey@therentlo.com.
       </Para>
       <H3>We cancel</H3>
       <Para>

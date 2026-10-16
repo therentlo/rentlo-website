@@ -190,8 +190,7 @@ function DashStage({ locale }: { locale: Locale }) {
           <div className="grid gap-px bg-line border border-line rounded-xl overflow-hidden mb-5" style={{ gridTemplateColumns: 'repeat(2,1fr)' }}>
             <KpiCard label="Collected · April" value={fmt(kpi.collected)} delta={<><ArrowUp />+12.4%</>} deltaClass="text-green-600" />
             <KpiCard label="Outstanding" value={fmt(kpi.outstanding)} valueStyle={{ color: '#D97706' }} delta={<><ArrowDown />2 tenants late</>} deltaClass="text-red-500" />
-            <KpiCard label="Occupancy" value={kpi.occ} delta={kpi.occSub} deltaClass="text-muted" />
-            <KpiCard label="On-time rate" value="94%" delta={<><ArrowUp />+6 pts YTD</>} deltaClass="text-green-600" />
+            <KpiCard label="Occupancy" value={kpi.occ} delta={kpi.occSub} deltaClass="text-muted" wide />
           </div>
 
           {/* Chart + Status row */}
@@ -335,9 +334,9 @@ function unitOf(t: { prop: string }) {
   return t.prop.split('·')[0].trim()
 }
 
-function KpiCard({ label, value, delta, deltaClass, valueStyle }: { label: string; value: string; delta?: React.ReactNode; deltaClass?: string; valueStyle?: React.CSSProperties }) {
+function KpiCard({ label, value, delta, deltaClass, valueStyle, wide }: { label: string; value: string; delta?: React.ReactNode; deltaClass?: string; valueStyle?: React.CSSProperties; wide?: boolean }) {
   return (
-    <div className="bg-white px-[18px] py-4 min-w-0">
+    <div className="bg-white px-[18px] py-4 min-w-0" style={wide ? { gridColumn: '1 / -1' } : undefined}>
       <div className="text-[11.5px] text-muted font-medium truncate">{label}</div>
       <div className="text-[22px] font-semibold text-navy mt-1 tracking-[-0.02em] leading-[1.1] truncate" style={valueStyle}>{value}</div>
       {delta && <div className={`text-[11px] mt-1.5 flex items-center gap-1 font-medium whitespace-nowrap ${deltaClass}`}>{delta}</div>}

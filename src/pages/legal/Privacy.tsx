@@ -16,7 +16,7 @@ export function LegalPrivacy() {
     <LegalLayout
       title="Privacy Policy"
       effectiveDate="1 April 2026"
-      lastUpdated="10 October 2026"
+      lastUpdated="16 October 2026"
     >
       <Callout>
         We collect your data to run Rentlo. We don't sell it. We don't use it for ads. We keep it
@@ -232,7 +232,7 @@ export function LegalPrivacy() {
         items={[
           <><strong>Everything is encrypted</strong> — in transit (HTTPS) and at rest (in the database)</>,
           <><strong>Access is restricted</strong> — each landlord can only see their own data</>,
-          <><strong>We use one-time codes</strong> — you sign in with a code sent to your email or phone, and changing your bank details needs another code</>,
+          <><strong>We use one-time codes</strong> — you sign in with a code sent to your email, and changing your bank details needs another code</>,
           <><strong>Our providers are vetted</strong> — we choose providers with established security track records</>,
           <><strong>We review regularly</strong> — security practices are checked and updated</>,
         ]}

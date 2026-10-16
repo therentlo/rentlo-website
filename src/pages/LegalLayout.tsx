@@ -5,7 +5,7 @@ import rentloLogoNav from '../assets/rentlo-logo-nav.png'
 
 interface LayoutProps {
   title: string
-  lastUpdated: string
+  lastUpdated?: string
   effectiveDate?: string
   isHub?: boolean
   children: React.ReactNode
@@ -54,7 +54,7 @@ export function LegalLayout({
             </Link>
             <span className="text-muted-2">/</span>
             {isHub ? (
-              <span className="text-navy">Legal</span>
+              <span className="text-navy">{title}</span>
             ) : (
               <>
                 <Link to="/legal" className="hover:text-teal transition-colors">
@@ -72,6 +72,7 @@ export function LegalLayout({
           </h1>
 
           {/* Dates */}
+          {(effectiveDate || lastUpdated) && (
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-[13.5px] text-muted mb-10 pb-8 border-b border-line">
             {effectiveDate && (
               <span>
@@ -79,11 +80,14 @@ export function LegalLayout({
                 <strong className="text-ink-2 font-medium">{effectiveDate}</strong>
               </span>
             )}
-            <span>
-              Last updated{' '}
-              <strong className="text-ink-2 font-medium">{lastUpdated}</strong>
-            </span>
+            {lastUpdated && (
+              <span>
+                Last updated{' '}
+                <strong className="text-ink-2 font-medium">{lastUpdated}</strong>
+              </span>
+            )}
           </div>
+          )}
 
           {/* Page content */}
           {children}

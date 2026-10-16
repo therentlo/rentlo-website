@@ -33,13 +33,14 @@ export function Footer() {
           {/* Landlords */}
           <FootCol title="Landlords">
             <FootLink href="#cta">Join waitlist</FootLink>
-            <FootLink href="mailto:hello@therentlo.com">Contact us</FootLink>
+            <FootLink href="mailto:hey@therentlo.com">Contact us</FootLink>
             <FootLink href="https://app.therentlo.com">Log in</FootLink>
           </FootCol>
 
           {/* Company */}
           <FootCol title="Company">
-            <FootLink href="mailto:hello@therentlo.com">Email us</FootLink>
+            <FootLink href="/about">About</FootLink>
+            <FootLink href="mailto:hey@therentlo.com">Email us</FootLink>
             <FootLink href="/legal">Legal hub</FootLink>
             <FootLink href="/legal/privacy">Privacy</FootLink>
             <FootLink href="/legal/terms">Terms</FootLink>
@@ -49,8 +50,8 @@ export function Footer() {
         <div className="flex justify-between items-center pt-7 border-t border-line text-muted text-[13.5px] flex-wrap gap-4">
           <span>© 2026 Rentlo. Built for Malaysia.</span>
           <span>
-            <a href="mailto:hello@therentlo.com" className="hover:text-teal transition-colors">
-              hello@therentlo.com
+            <a href="mailto:hey@therentlo.com" className="hover:text-teal transition-colors">
+              hey@therentlo.com
             </a>
           </span>
         </div>

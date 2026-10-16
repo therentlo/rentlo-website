@@ -64,9 +64,9 @@ export function Features({ locale }: Props) {
             reverse={false}
             kicker="03 — Receipts"
             title={<>Every receipt, filed<br />the moment it's paid.</>}
-            lead="Branded, numbered. Stored forever — not in your inbox."
+            lead="Branded, numbered, and kept in Rentlo — not lost in your inbox."
             bullets={[
-              'Auto-emailed to the tenant the second the payment matches.',
+              'Sent to your tenant as soon as you mark it paid.',
               'Shows your name to your tenant.',
             ]}
             visual={<ReceiptMock locale={locale} />}

@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 10 October 2026
+**Last Updated:** 16 October 2026
 
 ---
 
@@ -72,45 +72,15 @@ We're not liable if someone gets into your account because you shared your sign-
 
 ## 5. Plans and Pricing
 
-> **Rentlo is free during the pilot.** We do not charge or collect payments yet. This section applies once paid plans start.
+> **Rentlo is free during the pilot.** We do not charge or collect payments yet.
 
-### How billing works
+### When paid plans start
 
-Rentlo offers tiered subscription plans based on how many tenants you manage. Current pricing is at therentlo.com/pricing.
+Pricing comes later, and pilot landlords get the best deal. Before we charge anything:
 
-- Subscriptions are billed **monthly in advance**
-- Payment is due on or before the renewal date
-- We currently accept bank transfer; future payment methods (payment gateways, direct debit) will be announced
-
-### Founding Members
-
-The first **50 paying customers** get permanent discounted pricing — as long as you stay continuously subscribed. Here's how it works:
-
-- Your rate is locked at whatever was shown when you first paid
-- If your subscription lapses for more than **30 days**, the founding rate is gone
-- Founding pricing doesn't transfer if you cancel and create a new account
-- Founding Members are **exempt from future price increases**
-
-### Free tier
-
-We offer a free tier for managing **one tenant**. It's provided as-is, with no uptime or support guarantees.
-
-### What happens if you don't pay
-
-| Timeline | What happens |
-|---|---|
-| Due date passes | 7-day grace period — everything works normally |
-| After 7 days | Your account goes **read-only** (you can view data but can't create or edit) |
-| After 30 days | Account is **suspended** (no access) |
-| After 90 days | Account and **all data may be permanently deleted** |
-
-### Refunds
-
-**All payments are non-refundable.** If you cancel mid-cycle, your access continues until the end of the paid period, but no money comes back.
-
-### Price changes
-
-We can change pricing for new customers anytime. For existing paying customers, we'll give at least **30 days' notice** before any price increase. Founding Members are exempt.
+- We'll publish the prices and give you at least **30 days' notice** by email
+- We'll add the billing terms (how to pay, late payment and refunds) to these Terms and tell you when we do
+- You can stop using Rentlo before any charge applies
 
 ---
 
@@ -219,7 +189,7 @@ For changes that significantly reduce functionality you rely on, we'll tell you 
 
 ### You cancel
 
-You can cancel anytime by emailing hey@therentlo.com. Your access continues until the end of your current billing period.
+You can cancel anytime by emailing hey@therentlo.com.
 
 ### We cancel
 

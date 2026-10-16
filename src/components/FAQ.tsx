@@ -30,7 +30,7 @@ export function FAQ({ localeCode }: Props) {
     },
     {
       q: 'When can I actually start using it?',
-      a: "We're onboarding our first wave of landlords now. Join the waitlist and we'll reach out personally — usually within a few days — to get you set up. Free for your first tenant, forever.",
+      a: "We're onboarding our first wave of landlords now. Join the waitlist and we'll reach out personally — usually within a few days — to get you set up. Free during the pilot.",
     },
   ]
 
@@ -75,7 +75,7 @@ export function FAQ({ localeCode }: Props) {
 
         <div className="text-center text-muted text-[14px] mt-12">
           More questions?{' '}
-          <a href="mailto:hello@therentlo.com" className="text-teal-700 font-medium hover:underline">
+          <a href="mailto:hey@therentlo.com" className="text-teal-700 font-medium hover:underline">
             Email us — we read everything.
           </a>
         </div>
