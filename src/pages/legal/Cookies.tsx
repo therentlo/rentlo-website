@@ -17,11 +17,12 @@ export function LegalCookies() {
     <LegalLayout
       title="Cookie Notice"
       effectiveDate="1 April 2026"
-      lastUpdated="10 October 2026"
+      lastUpdated="17 October 2026"
     >
       <Callout>
-        We use browser storage to keep you signed in and protect your account. We don't use
-        analytics or advertising cookies. You can control most of it through your browser settings.
+        We use browser storage to keep you signed in and protect your account. We count visits with
+        Cloudflare Web Analytics, which sets no cookies. We don't use advertising cookies. You can
+        control most of it through your browser settings.
       </Callout>
 
       {/* 1 */}
@@ -81,9 +82,19 @@ export function LegalCookies() {
       <Para>
         <strong>Can you turn them off?</strong> Yes, but some convenience features won't work.
       </Para>
-      <H3>Analytics cookies</H3>
+      <H3>Analytics (no cookies)</H3>
       <Para>
-        We do not use analytics cookies or tracking tools on therentlo.com or in the Rentlo app.
+        We use Cloudflare Web Analytics on therentlo.com and app.therentlo.com to count visits and
+        see how fast our pages load. It sets no cookies and stores nothing in your browser.
+        Cloudflare says it does not fingerprint you by your IP address or browser details.
+      </Para>
+      <Para>
+        When a page loads, a small Cloudflare script sends Cloudflare: the page address (without
+        anything after a &quot;?&quot;), the site that linked you there, your browser, operating
+        system and device type (desktop, mobile or tablet), your country, and how long the page
+        took to load. Cloudflare keeps the detailed data for 7 days, then only summary figures.
+      </Para>
+      <Para>
         We don't track you across other websites and we don't build an advertising profile.
       </Para>
 
@@ -99,6 +110,7 @@ export function LegalCookies() {
             'Site security and content delivery',
             'Bot protection, security challenge cookies (if triggered)',
           ],
+          ['Cloudflare Web Analytics', 'Counts visits and measures page speed', 'None'],
         ]}
       />
       <Para>

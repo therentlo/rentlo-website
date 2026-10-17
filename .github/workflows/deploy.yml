@@ -1,0 +1,115 @@
+# Deploy the website (therentlo.com) to Cloudflare Pages on push to master,
+# or by hand from the Actions tab ("Run workflow").
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   CLOUDFLARE_API_TOKEN  - Cloudflare token with "Cloudflare Pages: Edit"
+#   CLOUDFLARE_ACCOUNT_ID - the Cloudflare account that owns the Pages project
+# While either secret is missing, the workflow skips the deploy and stays green.
+#
+# Pages project: rentlo-website (rentlo-website.pages.dev serves the same build
+# as therentlo.com, checked 2026-10-17). wrangler.toml still says
+# "rentlo-marketing", so the project name is passed explicitly here.
+#
+# PRODUCTION_BRANCH must equal the production branch set in Cloudflare
+# (Pages -> rentlo-website -> Settings -> Builds & deployments). If it does
+# not, the upload becomes a preview, the live site is not changed, and the
+# "Verify" step below fails, so a wrong value can't hurt the live site.
+#
+# Undo: Cloudflare Pages keeps every earlier deployment. Cloudflare dashboard ->
+# Pages -> rentlo-website -> Deployments -> previous one -> "Rollback", or
+# revert the commit on master (this workflow redeploys the older code).
+
+name: Deploy website to Cloudflare Pages
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-website-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    env:
+      PAGES_PROJECT: rentlo-website
+      PRODUCTION_BRANCH: master
+      LIVE_URL: https://therentlo.com/
+    steps:
+      - name: Check Cloudflare secrets
+        id: secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Deploy skipped::Cloudflare secrets are not set yet, so nothing was deployed."
+            echo "Deploy skipped: CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID not set." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Checkout
+        if: steps.secrets.outputs.ready == 'true'
+        uses: actions/checkout@v5
+
+      - name: Setup Node 22
+        if: steps.secrets.outputs.ready == 'true'
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.secrets.outputs.ready == 'true'
+        run: npm ci
+
+      - name: Build
+        if: steps.secrets.outputs.ready == 'true'
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        if: steps.secrets.outputs.ready == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@3.114.17 pages deploy dist --project-name="$PAGES_PROJECT" --branch="$PRODUCTION_BRANCH" --commit-hash="$GITHUB_SHA" --commit-dirty=true 2>&1 | tee deploy.out
+          url=$(grep -oE "https://[a-z0-9]+\.${PAGES_PROJECT}\.pages\.dev" deploy.out | tail -1 || true)
+          {
+            echo "### Website deploy"
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Cloudflare deployment: ${url:-not found in output}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=Cloudflare deployment::${url:-not found in output} (commit ${GITHUB_SHA})"
+
+      - name: Verify the live site serves this build
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          set -uo pipefail
+          expected=$(grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' dist/index.html | head -1)
+          echo "Expected bundle: $expected"
+          for i in $(seq 1 18); do
+            live=$(curl -fsSL -H 'Cache-Control: no-cache' "$LIVE_URL?cb=$GITHUB_RUN_ID-$i" | grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' | head -1)
+            if [ "$live" = "$expected" ]; then
+              echo "OK: live site serves $live"
+              echo "- Live check: therentlo.com serves \`$live\`" >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=Live check passed::therentlo.com serves $live"
+              exit 0
+            fi
+            echo "Waiting for propagation ($i/18): live=${live:-none}"
+            sleep 10
+          done
+          echo "::error::therentlo.com is not serving the new build after 3 minutes. If the deploy step succeeded, PRODUCTION_BRANCH probably does not match Cloudflare's production branch (the upload went to a preview)."
+          echo "- Live check: FAILED, therentlo.com not serving \`$expected\`" >> "$GITHUB_STEP_SUMMARY"
+          exit 1

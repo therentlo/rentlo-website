@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** 1 April 2026
-**Last Updated:** 16 October 2026
+**Last Updated:** 17 October 2026
 
 ---
 
@@ -52,11 +52,12 @@ Your landlord uploads your data to Rentlo. This typically includes:
 
 ### What we collect automatically (everyone)
 
-When you visit therentlo.com, we automatically pick up:
+When you visit therentlo.com or use the Rentlo app, we automatically pick up:
 
 - Your IP address
 - Your device type and browser
 - If you join the waitlist: the email or phone number you enter and your country
+- Visit and page-speed figures from Cloudflare Web Analytics: the page you opened, the site that linked you there, your browser, operating system, device type and country, and how long the page took to load. It sets no cookies
 - Cookies (see our [Cookie Notice](/legal/cookies) for details)
 
 ---
@@ -73,7 +74,7 @@ Here's exactly what we do with your data — and nothing else:
 | Generate invoices and keep contract records | This is a core feature of Rentlo |
 | Send messages to tenants | On your behalf — invoices, overdue reminders, payment confirmations (email and WhatsApp) |
 | Read your documents and tenant receipts | We use Google Gemini to read ID cards, tenancy agreements, payout QR images and payment receipt photos (see Section 5) |
-| Improve the product | We look at anonymised counts from our own database to fix bugs and build better features. We do not use tracking tools on the site or app |
+| Improve the product | We look at anonymised counts from our own database, and visit and page-speed figures from Cloudflare Web Analytics (no cookies), to fix bugs and build better features. We do not use advertising or cross-site tracking tools |
 | Stay legal | Tax records, LHDN reporting, responding to court orders |
 | Keep things secure | Fraud detection, blocking unauthorised access |
 
@@ -108,7 +109,7 @@ These companies help us run Rentlo. They process data on our behalf, under stric
 | Provider | What they do and what they receive | Where they're based |
 |---|---|---|
 | Supabase | Database, login and file storage. Holds your data and the files you upload (ID card image, payout QR, signed contracts, tenant receipt images) | Singapore |
-| Cloudflare | Hosts therentlo.com and app.therentlo.com and delivers pages | Global |
+| Cloudflare | Hosts therentlo.com and app.therentlo.com and delivers pages. Its Web Analytics counts visits and page load times (page address, referring site, browser, operating system, device type, country) without cookies | Global |
 | Resend | Sends invoice and overdue-reminder emails to tenants, and alert emails to landlords and to us | United States |
 | Google (Gemini API) | Reads images and PDFs that you or your tenants send: your ID card image, a tenancy agreement PDF, your payout QR image, and payment receipt photos that tenants send over WhatsApp | United States |
 | Google (Places API) | Suggests addresses. Receives the address text a landlord types when adding a property | United States |
@@ -155,6 +156,7 @@ We don't keep your data forever. Here's the breakdown:
 | Payment and billing records | 7 years (required by Malaysian tax law) |
 | Support messages | 3 years from your last message |
 | Properties you move to the bin | 90 days in the bin, then permanently deleted |
+| Website visit figures (Cloudflare Web Analytics) | Kept by Cloudflare: detailed for 7 days, then summary figures only |
 
 You can ask us to delete things earlier (see Section 10), but we may need to keep some records if the law says so.
 
