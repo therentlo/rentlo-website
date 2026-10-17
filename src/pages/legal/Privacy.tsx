@@ -16,7 +16,7 @@ export function LegalPrivacy() {
     <LegalLayout
       title="Privacy Policy"
       effectiveDate="1 April 2026"
-      lastUpdated="16 October 2026"
+      lastUpdated="17 October 2026"
     >
       <Callout>
         We collect your data to run Rentlo. We don't sell it. We don't use it for ads. We keep it
@@ -81,12 +81,13 @@ export function LegalPrivacy() {
         start with your landlord — they are the one who controls it.
       </Callout>
       <H3>What we collect automatically (everyone)</H3>
-      <Para>When you visit therentlo.com, we automatically pick up:</Para>
+      <Para>When you visit therentlo.com or use the Rentlo app, we automatically pick up:</Para>
       <Ul
         items={[
           'Your IP address',
           'Your device type and browser',
           'If you join the waitlist: the email or phone number you enter and your country',
+          <>Visit and page-speed figures from Cloudflare Web Analytics: the page you opened, the site that linked you there, your browser, operating system, device type and country, and how long the page took to load. It sets no cookies</>,
           <>Cookies (see our <DocLink to="/legal/cookies">Cookie Notice</DocLink> for details)</>,
         ]}
       />
@@ -105,7 +106,7 @@ export function LegalPrivacy() {
           ['Read your documents and tenant receipts', 'We use Google Gemini to read ID cards, tenancy agreements, payout QR images and payment receipt photos (see Section 5)'],
           [
             'Improve the product',
-            'We look at anonymised counts from our own database to fix bugs and build better features. We do not use tracking tools on the site or app',
+            'We look at anonymised counts from our own database, and visit and page-speed figures from Cloudflare Web Analytics (no cookies), to fix bugs and build better features. We do not use advertising or cross-site tracking tools',
           ],
           ['Stay legal', 'Tax records, LHDN reporting, responding to court orders'],
           ['Keep things secure', 'Fraud detection, blocking unauthorised access'],
@@ -147,7 +148,7 @@ export function LegalPrivacy() {
         headers={['Provider', 'What they do and what they receive', "Where they're based"]}
         rows={[
           ['Supabase', 'Database, login and file storage. Holds your data and the files you upload (ID card image, payout QR, signed contracts, tenant receipt images)', 'Singapore'],
-          ['Cloudflare', 'Hosts therentlo.com and app.therentlo.com and delivers pages', 'Global'],
+          ['Cloudflare', 'Hosts therentlo.com and app.therentlo.com and delivers pages. Its Web Analytics counts visits and page load times (page address, referring site, browser, operating system, device type, country) without cookies', 'Global'],
           ['Resend', 'Sends invoice and overdue-reminder emails to tenants, and alert emails to landlords and to us', 'United States'],
           [
             'Google (Gemini API)',
@@ -218,6 +219,7 @@ export function LegalPrivacy() {
           ['Payment and billing records', '7 years (required by Malaysian tax law)'],
           ['Support messages', '3 years from your last message'],
           ['Properties you move to the bin', '90 days in the bin, then permanently deleted'],
+          ['Website visit figures (Cloudflare Web Analytics)', 'Kept by Cloudflare: detailed for 7 days, then summary figures only'],
         ]}
       />
       <Para>
